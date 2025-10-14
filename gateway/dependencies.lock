@@ -1,0 +1,23 @@
+dependencies:
+  example_init:
+    dependencies: []
+    source:
+      path: D:\esp\Espressif\frameworks\esp-idf-v5.4.2\examples\bluetooth\esp_ble_mesh\common_components\example_init
+      type: local
+    version: '*'
+  example_nvs:
+    dependencies: []
+    source:
+      path: D:\esp\Espressif\frameworks\esp-idf-v5.4.2\examples\bluetooth\esp_ble_mesh\common_components\example_nvs
+      type: local
+    version: '*'
+  idf:
+    source:
+      type: idf
+    version: 5.4.2
+direct_dependencies:
+- example_init
+- example_nvs
+manifest_hash: 298fad10b9eeb64d1ee68f2bdeb4f53e531ccdd76d282ff9c0946d80e815a5f5
+target: esp32
+version: 2.0.0
