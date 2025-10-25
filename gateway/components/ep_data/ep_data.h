@@ -2,62 +2,59 @@
 #define EP_DATA_H
 
 #include <stdint.h>
-#include <stddef.h>
 #include <stdbool.h>
+#include <stddef.h>
 
 #ifdef __cplusplus
 extern "C" {
 #endif
 
-// Max length (including NUL) for barcode buffer
+// ============ Config ============
 #ifndef EP_BARCODE_MAX_LEN
-#define EP_BARCODE_MAX_LEN 32
+#define EP_BARCODE_MAX_LEN 64  // đủ dài cho EAN13/UPC/EAN8, v.v.
 #endif
 
-typedef struct {
-    uint16_t add;                          // Example: 0x005B
-    int32_t  price;                        // Example: 150000 (VND)
-    char     barcode[EP_BARCODE_MAX_LEN];  // NUL-terminated
-} EPData;
-
+// ============ Status code ============
 typedef enum {
     EP_OK = 0,
     EP_ERR_NULL     = -1,
     EP_ERR_KEY      = -2,
     EP_ERR_VALUE    = -3,
-    EP_ERR_OVERFLOW = -4,
-    EP_ERR_FORMAT   = -5
+    EP_ERR_FORMAT   = -4,
+    EP_ERR_OVERFLOW = -5
 } EPStatus;
 
-/**
- * Parse JSON like:
- * {"add":"0x005B","price":150000,"barcode":"0123456789012"}
- * - add: string "0x...." (hex) OR decimal number
- * - price: integer number
- * - barcode: quoted string
- */
+// ============ Data model ============
+typedef struct {
+    uint16_t add;                          // số lượng
+    int32_t  price;                        // đơn giá (VND)
+    char     barcode[EP_BARCODE_MAX_LEN];  // chỉ chữ số, NUL-terminated
+
+    // Optional sale (percent 0..100)
+    bool     has_sale;
+    uint8_t  sale;                         // 0..100 (%)
+} EPData;
+
+// ============ API ============
+
+// Parse JSON vào struct (yêu cầu có add, price, barcode; sale tùy chọn)
 EPStatus ep_parse(const char *json, EPData *out);
 
-/**
- * Serialize to JSON. Example output:
- * {"add":"0x005B","price":150000,"barcode":"0123456789012"}
- * Returns number of bytes written (excluding NUL) on success.
- * Returns negative (EP_ERR_*) on error (e.g., buffer too small).
- */
+// Serialize struct ra JSON. Trả về số byte đã ghi (không gồm NUL) hoặc <0 nếu lỗi.
+// Lưu ý: add được in DEC (hệ 10) để khớp chuỗi đầu vào của bạn.
 int ep_to_json(const EPData *in, char *buf, size_t buflen);
 
-/**
- * Basic validation:
- * - price >= 0
- * - barcode contains only digits and length 1..(EP_BARCODE_MAX_LEN-1)
- * - if barcode length == 13, also check EAN-13 checksum
- */
+// Ràng buộc dữ liệu
 bool ep_validate(const EPData *in);
 
-/**
- * Verify EAN-13 checksum for a 13-digit string.
- */
-bool ep_ean13_verify(const char *barcode);
+// Tính giá sau giảm cho 1 sp (floor), nếu không có sale -> trả price
+int32_t ep_unit_price_after_sale(const EPData *in);
+
+// Tính thành tiền = unit_after_sale * add (dùng int64 tránh tràn)
+int64_t ep_total_cost(const EPData *in);
+
+// (Tuỳ chọn) Kiểm tra checksum EAN-13 khi barcode dài 13
+bool ep_ean13_verify(const char *digits13);
 
 #ifdef __cplusplus
 }

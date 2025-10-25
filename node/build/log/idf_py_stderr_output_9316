@@ -1,0 +1,102 @@
+[0;33m--- Warning: GDB cannot open serial ports accessed as COMx[0m
+[0;33m--- Using \\.\COM9 instead...[0m
+[0;33m--- esp-idf-monitor 1.7.0 on \\.\COM9 115200[0m
+[0;33m--- Quit: Ctrl+] | Menu: Ctrl+T | Help: Ctrl+T followed by Ctrl+H[0m
+[0m--- 0x40080400: [0;33m_init[0m[0m at [0;32m??[0m[0m:[1;31m?[0m
+[0m--- 0x4012f52e: [0;33mtask_wdt_timeout_handling[0m[0m at [0;32mD:/esp/Espressif/frameworks/esp-idf-v5.4.2/components/esp_system/task_wdt/task_wdt.c[0m[0m:[1;31m434[0m
+[0m--- 0x4012f938: [0;33mtask_wdt_isr[0m[0m at [0;32mD:/esp/Espressif/frameworks/esp-idf-v5.4.2/components/esp_system/task_wdt/task_wdt.c[0m[0m:[1;31m507[0m
+[0m--- 0x40083ac5: [0;33m_xt_lowint1[0m[0m at [0;32mD:/esp/Espressif/frameworks/esp-idf-v5.4.2/components/xtensa/xtensa_vectors.S[0m[0m:[1;31m1240[0m
+[0m--- 0x4009162c: [0;33m_frxt_dispatch[0m[0m at [0;32mD:/esp/Espressif/frameworks/esp-idf-v5.4.2/components/freertos/FreeRTOS-Kernel/portable/xtensa/portasm.S[0m[0m:[1;31m484[0m
+[0m--- 0x400de98b: [0;33m__yield[0m[0m at [0;32mD:/esp/node/managed_components/espressif__arduino-esp32/cores/esp32/esp32-hal-misc.c[0m[0m:[1;31m118[0m
+[0m--- 0x400dd57c: [0;33mGxEPD2_EPD::_waitWhileBusy(char const*, unsigned short)[0m[0m at [0;32mD:/esp/node/components/gxepd2/src/GxEPD2_EPD.cpp[0m[0m:[1;31m155[0m
+[0m--- 0x400ddec3: [0;33mGxEPD2_213_Z98c::_Update_Full()[0m[0m at [0;32mD:/esp/node/components/gxepd2/src/epd3c/GxEPD2_213_Z98c.cpp[0m[0m:[1;31m390[0m
+[0m--- 0x400ddef0: [0;33mGxEPD2_213_Z98c::refresh(bool)[0m[0m at [0;32mD:/esp/node/components/gxepd2/src/epd3c/GxEPD2_213_Z98c.cpp[0m[0m:[1;31m274[0m
+[0m--- 0x400dd18e: [0;33mGxEPD2_3C<GxEPD2_213_Z98c, (unsigned short)250>::nextPage()[0m[0m at [0;32mD:/esp/node/components/gxepd2/src/GxEPD2_3C.h[0m[0m:[1;31m377[0m
+[0m--- 0x400dd28c: [0;33mPriceTagEPD::begin(unsigned char, bool)[0m[0m at [0;32mD:/esp/node/components/price_tag_epd/src/price_tag_epd.cpp[0m[0m:[1;31m54[0m
+[0m--- 0x400dc642: [0;33mapp_main[0m[0m at [0;32mD:/esp/node/main/main.cpp[0m[0m:[1;31m393[0m
+[0m--- 0x40164e5f: [0;33mmain_task[0m[0m at [0;32mD:/esp/Espressif/frameworks/esp-idf-v5.4.2/components/freertos/app_startup.c[0m[0m:[1;31m208[0m
+[0m--- 0x4009114e: [0;33mvPortTaskWrapper[0m[0m at [0;32mD:/esp/Espressif/frameworks/esp-idf-v5.4.2/components/freertos/FreeRTOS-Kernel/portable/xtensa/port.c[0m[0m:[1;31m139[0m
+[0m--- 0x4012f52e: [0;33mtask_wdt_timeout_handling[0m[0m at [0;32mD:/esp/Espressif/frameworks/esp-idf-v5.4.2/components/esp_system/task_wdt/task_wdt.c[0m[0m:[1;31m434[0m
+[0m--- 0x4012f938: [0;33mtask_wdt_isr[0m[0m at [0;32mD:/esp/Espressif/frameworks/esp-idf-v5.4.2/components/esp_system/task_wdt/task_wdt.c[0m[0m:[1;31m507[0m
+[0m--- 0x40083ac5: [0;33m_xt_lowint1[0m[0m at [0;32mD:/esp/Espressif/frameworks/esp-idf-v5.4.2/components/xtensa/xtensa_vectors.S[0m[0m:[1;31m1240[0m
+[0m--- 0x4009162c: [0;33m_frxt_dispatch[0m[0m at [0;32mD:/esp/Espressif/frameworks/esp-idf-v5.4.2/components/freertos/FreeRTOS-Kernel/portable/xtensa/portasm.S[0m[0m:[1;31m484[0m
+[0m--- 0x400de98b: [0;33m__yield[0m[0m at [0;32mD:/esp/node/managed_components/espressif__arduino-esp32/cores/esp32/esp32-hal-misc.c[0m[0m:[1;31m118[0m
+[0m--- 0x400dd57c: [0;33mGxEPD2_EPD::_waitWhileBusy(char const*, unsigned short)[0m[0m at [0;32mD:/esp/node/components/gxepd2/src/GxEPD2_EPD.cpp[0m[0m:[1;31m155[0m
+[0m--- 0x400ddec3: [0;33mGxEPD2_213_Z98c::_Update_Full()[0m[0m at [0;32mD:/esp/node/components/gxepd2/src/epd3c/GxEPD2_213_Z98c.cpp[0m[0m:[1;31m390[0m
+[0m--- 0x400ddef0: [0;33mGxEPD2_213_Z98c::refresh(bool)[0m[0m at [0;32mD:/esp/node/components/gxepd2/src/epd3c/GxEPD2_213_Z98c.cpp[0m[0m:[1;31m274[0m
+[0m--- 0x400dd18e: [0;33mGxEPD2_3C<GxEPD2_213_Z98c, (unsigned short)250>::nextPage()[0m[0m at [0;32mD:/esp/node/components/gxepd2/src/GxEPD2_3C.h[0m[0m:[1;31m377[0m
+[0m--- 0x400dd28c: [0;33mPriceTagEPD::begin(unsigned char, bool)[0m[0m at [0;32mD:/esp/node/components/price_tag_epd/src/price_tag_epd.cpp[0m[0m:[1;31m54[0m
+[0m--- 0x400dc642: [0;33mapp_main[0m[0m at [0;32mD:/esp/node/main/main.cpp[0m[0m:[1;31m393[0m
+[0m--- 0x40164e5f: [0;33mmain_task[0m[0m at [0;32mD:/esp/Espressif/frameworks/esp-idf-v5.4.2/components/freertos/app_startup.c[0m[0m:[1;31m208[0m
+[0m--- 0x4009114e: [0;33mvPortTaskWrapper[0m[0m at [0;32mD:/esp/Espressif/frameworks/esp-idf-v5.4.2/components/freertos/FreeRTOS-Kernel/portable/xtensa/port.c[0m[0m:[1;31m139[0m
+[0m--- 0x4012f52e: [0;33mtask_wdt_timeout_handling[0m[0m at [0;32mD:/esp/Espressif/frameworks/esp-idf-v5.4.2/components/esp_system/task_wdt/task_wdt.c[0m[0m:[1;31m434[0m
+[0m--- 0x4012f938: [0;33mtask_wdt_isr[0m[0m at [0;32mD:/esp/Espressif/frameworks/esp-idf-v5.4.2/components/esp_system/task_wdt/task_wdt.c[0m[0m:[1;31m507[0m
+[0m--- 0x40083ac5: [0;33m_xt_lowint1[0m[0m at [0;32mD:/esp/Espressif/frameworks/esp-idf-v5.4.2/components/xtensa/xtensa_vectors.S[0m[0m:[1;31m1240[0m
+[0m--- 0x4009162c: [0;33m_frxt_dispatch[0m[0m at [0;32mD:/esp/Espressif/frameworks/esp-idf-v5.4.2/components/freertos/FreeRTOS-Kernel/portable/xtensa/portasm.S[0m[0m:[1;31m484[0m
+[0m--- 0x400de98b: [0;33m__yield[0m[0m at [0;32mD:/esp/node/managed_components/espressif__arduino-esp32/cores/esp32/esp32-hal-misc.c[0m[0m:[1;31m118[0m
+[0m--- 0x400dd57c: [0;33mGxEPD2_EPD::_waitWhileBusy(char const*, unsigned short)[0m[0m at [0;32mD:/esp/node/components/gxepd2/src/GxEPD2_EPD.cpp[0m[0m:[1;31m155[0m
+[0m--- 0x400ddec3: [0;33mGxEPD2_213_Z98c::_Update_Full()[0m[0m at [0;32mD:/esp/node/components/gxepd2/src/epd3c/GxEPD2_213_Z98c.cpp[0m[0m:[1;31m390[0m
+[0m--- 0x400ddef0: [0;33mGxEPD2_213_Z98c::refresh(bool)[0m[0m at [0;32mD:/esp/node/components/gxepd2/src/epd3c/GxEPD2_213_Z98c.cpp[0m[0m:[1;31m274[0m
+[0m--- 0x400dd18e: [0;33mGxEPD2_3C<GxEPD2_213_Z98c, (unsigned short)250>::nextPage()[0m[0m at [0;32mD:/esp/node/components/gxepd2/src/GxEPD2_3C.h[0m[0m:[1;31m377[0m
+[0m--- 0x400dd28c: [0;33mPriceTagEPD::begin(unsigned char, bool)[0m[0m at [0;32mD:/esp/node/components/price_tag_epd/src/price_tag_epd.cpp[0m[0m:[1;31m54[0m
+[0m--- 0x400dc642: [0;33mapp_main[0m[0m at [0;32mD:/esp/node/main/main.cpp[0m[0m:[1;31m393[0m
+[0m--- 0x40164e5f: [0;33mmain_task[0m[0m at [0;32mD:/esp/Espressif/frameworks/esp-idf-v5.4.2/components/freertos/app_startup.c[0m[0m:[1;31m208[0m
+[0m--- 0x4009114e: [0;33mvPortTaskWrapper[0m[0m at [0;32mD:/esp/Espressif/frameworks/esp-idf-v5.4.2/components/freertos/FreeRTOS-Kernel/portable/xtensa/port.c[0m[0m:[1;31m139[0m
+[0m--- 0x4012f52e: [0;33mtask_wdt_timeout_handling[0m[0m at [0;32mD:/esp/Espressif/frameworks/esp-idf-v5.4.2/components/esp_system/task_wdt/task_wdt.c[0m[0m:[1;31m434[0m
+[0m--- 0x4012f938: [0;33mtask_wdt_isr[0m[0m at [0;32mD:/esp/Espressif/frameworks/esp-idf-v5.4.2/components/esp_system/task_wdt/task_wdt.c[0m[0m:[1;31m507[0m
+[0m--- 0x40083ac5: [0;33m_xt_lowint1[0m[0m at [0;32mD:/esp/Espressif/frameworks/esp-idf-v5.4.2/components/xtensa/xtensa_vectors.S[0m[0m:[1;31m1240[0m
+[0m--- 0x4009162c: [0;33m_frxt_dispatch[0m[0m at [0;32mD:/esp/Espressif/frameworks/esp-idf-v5.4.2/components/freertos/FreeRTOS-Kernel/portable/xtensa/portasm.S[0m[0m:[1;31m484[0m
+[0m--- 0x400de98b: [0;33m__yield[0m[0m at [0;32mD:/esp/node/managed_components/espressif__arduino-esp32/cores/esp32/esp32-hal-misc.c[0m[0m:[1;31m118[0m
+[0m--- 0x400dd57c: [0;33mGxEPD2_EPD::_waitWhileBusy(char const*, unsigned short)[0m[0m at [0;32mD:/esp/node/components/gxepd2/src/GxEPD2_EPD.cpp[0m[0m:[1;31m155[0m
+[0m--- 0x400ddec3: [0;33mGxEPD2_213_Z98c::_Update_Full()[0m[0m at [0;32mD:/esp/node/components/gxepd2/src/epd3c/GxEPD2_213_Z98c.cpp[0m[0m:[1;31m390[0m
+[0m--- 0x400ddef0: [0;33mGxEPD2_213_Z98c::refresh(bool)[0m[0m at [0;32mD:/esp/node/components/gxepd2/src/epd3c/GxEPD2_213_Z98c.cpp[0m[0m:[1;31m274[0m
+[0m--- 0x400dd18e: [0;33mGxEPD2_3C<GxEPD2_213_Z98c, (unsigned short)250>::nextPage()[0m[0m at [0;32mD:/esp/node/components/gxepd2/src/GxEPD2_3C.h[0m[0m:[1;31m377[0m
+[0m--- 0x400dd28c: [0;33mPriceTagEPD::begin(unsigned char, bool)[0m[0m at [0;32mD:/esp/node/components/price_tag_epd/src/price_tag_epd.cpp[0m[0m:[1;31m54[0m
+[0m--- 0x400dc642: [0;33mapp_main[0m[0m at [0;32mD:/esp/node/main/main.cpp[0m[0m:[1;31m393[0m
+[0m--- 0x40164e5f: [0;33mmain_task[0m[0m at [0;32mD:/esp/Espressif/frameworks/esp-idf-v5.4.2/components/freertos/app_startup.c[0m[0m:[1;31m208[0m
+[0m--- 0x4009114e: [0;33mvPortTaskWrapper[0m[0m at [0;32mD:/esp/Espressif/frameworks/esp-idf-v5.4.2/components/freertos/FreeRTOS-Kernel/portable/xtensa/port.c[0m[0m:[1;31m139[0m
+[0m--- 0x4008573e: [0;33mesp_crosscore_isr[0m[0m at [0;32mD:/esp/Espressif/frameworks/esp-idf-v5.4.2/components/esp_system/crosscore_int.c[0m[0m:[1;31m73[0m
+[0m--- 0x40083ac5: [0;33m_xt_lowint1[0m[0m at [0;32mD:/esp/Espressif/frameworks/esp-idf-v5.4.2/components/xtensa/xtensa_vectors.S[0m[0m:[1;31m1240[0m
+[0m--- 0x4009162c: [0;33m_frxt_dispatch[0m[0m at [0;32mD:/esp/Espressif/frameworks/esp-idf-v5.4.2/components/freertos/FreeRTOS-Kernel/portable/xtensa/portasm.S[0m[0m:[1;31m484[0m
+[0m--- 0x400de98b: [0;33m__yield[0m[0m at [0;32mD:/esp/node/managed_components/espressif__arduino-esp32/cores/esp32/esp32-hal-misc.c[0m[0m:[1;31m118[0m
+[0m--- 0x400dd57c: [0;33mGxEPD2_EPD::_waitWhileBusy(char const*, unsigned short)[0m[0m at [0;32mD:/esp/node/components/gxepd2/src/GxEPD2_EPD.cpp[0m[0m:[1;31m155[0m
+[0m--- 0x400ddec3: [0;33mGxEPD2_213_Z98c::_Update_Full()[0m[0m at [0;32mD:/esp/node/components/gxepd2/src/epd3c/GxEPD2_213_Z98c.cpp[0m[0m:[1;31m390[0m
+[0m--- 0x400ddef0: [0;33mGxEPD2_213_Z98c::refresh(bool)[0m[0m at [0;32mD:/esp/node/components/gxepd2/src/epd3c/GxEPD2_213_Z98c.cpp[0m[0m:[1;31m274[0m
+[0m--- 0x400dd18e: [0;33mGxEPD2_3C<GxEPD2_213_Z98c, (unsigned short)250>::nextPage()[0m[0m at [0;32mD:/esp/node/components/gxepd2/src/GxEPD2_3C.h[0m[0m:[1;31m377[0m
+[0m--- 0x400dd2fd: [0;33mPriceTagEPD::renderTag(String const&, String const&, String const&, String const&, String const&)[0m[0m at [0;32mD:/esp/node/components/price_tag_epd/src/price_tag_epd.cpp[0m[0m:[1;31m336[0m
+[0m--- 0x400dc002: [0;33mrender_task(void*)[0m[0m at [0;32mD:/esp/node/main/main.cpp[0m[0m:[1;31m218[0m
+[0m--- 0x4009114e: [0;33mvPortTaskWrapper[0m[0m at [0;32mD:/esp/Espressif/frameworks/esp-idf-v5.4.2/components/freertos/FreeRTOS-Kernel/portable/xtensa/port.c[0m[0m:[1;31m139[0m
+[0m--- 0x4008573e: [0;33mesp_crosscore_isr[0m[0m at [0;32mD:/esp/Espressif/frameworks/esp-idf-v5.4.2/components/esp_system/crosscore_int.c[0m[0m:[1;31m73[0m
+[0m--- 0x40083ac5: [0;33m_xt_lowint1[0m[0m at [0;32mD:/esp/Espressif/frameworks/esp-idf-v5.4.2/components/xtensa/xtensa_vectors.S[0m[0m:[1;31m1240[0m
+[0m--- 0x40092bee: [0;33mvTaskDelay[0m[0m at [0;32mD:/esp/Espressif/frameworks/esp-idf-v5.4.2/components/freertos/FreeRTOS-Kernel/tasks.c[0m[0m:[1;31m1588[0m
+[0m--- 0x400de9f0: [0;33mdelay[0m[0m at [0;32mD:/esp/node/managed_components/espressif__arduino-esp32/cores/esp32/esp32-hal-misc.c[0m[0m:[1;31m213[0m
+[0m--- 0x400dd556: [0;33mGxEPD2_EPD::_waitWhileBusy(char const*, unsigned short)[0m[0m at [0;32mD:/esp/node/components/gxepd2/src/GxEPD2_EPD.cpp[0m[0m:[1;31m147[0m
+[0m--- 0x400ddec3: [0;33mGxEPD2_213_Z98c::_Update_Full()[0m[0m at [0;32mD:/esp/node/components/gxepd2/src/epd3c/GxEPD2_213_Z98c.cpp[0m[0m:[1;31m390[0m
+[0m--- 0x400ddef0: [0;33mGxEPD2_213_Z98c::refresh(bool)[0m[0m at [0;32mD:/esp/node/components/gxepd2/src/epd3c/GxEPD2_213_Z98c.cpp[0m[0m:[1;31m274[0m
+[0m--- 0x400dd18e: [0;33mGxEPD2_3C<GxEPD2_213_Z98c, (unsigned short)250>::nextPage()[0m[0m at [0;32mD:/esp/node/components/gxepd2/src/GxEPD2_3C.h[0m[0m:[1;31m377[0m
+[0m--- 0x400dd2fd: [0;33mPriceTagEPD::renderTag(String const&, String const&, String const&, String const&, String const&)[0m[0m at [0;32mD:/esp/node/components/price_tag_epd/src/price_tag_epd.cpp[0m[0m:[1;31m336[0m
+[0m--- 0x400dc002: [0;33mrender_task(void*)[0m[0m at [0;32mD:/esp/node/main/main.cpp[0m[0m:[1;31m218[0m
+[0m--- 0x4009114e: [0;33mvPortTaskWrapper[0m[0m at [0;32mD:/esp/Espressif/frameworks/esp-idf-v5.4.2/components/freertos/FreeRTOS-Kernel/portable/xtensa/port.c[0m[0m:[1;31m139[0m
+[0m--- 0x4008573e: [0;33mesp_crosscore_isr[0m[0m at [0;32mD:/esp/Espressif/frameworks/esp-idf-v5.4.2/components/esp_system/crosscore_int.c[0m[0m:[1;31m73[0m
+[0m--- 0x40083ac5: [0;33m_xt_lowint1[0m[0m at [0;32mD:/esp/Espressif/frameworks/esp-idf-v5.4.2/components/xtensa/xtensa_vectors.S[0m[0m:[1;31m1240[0m
+[0m--- 0x4009162c: [0;33m_frxt_dispatch[0m[0m at [0;32mD:/esp/Espressif/frameworks/esp-idf-v5.4.2/components/freertos/FreeRTOS-Kernel/portable/xtensa/portasm.S[0m[0m:[1;31m484[0m
+[0m--- 0x400de98b: [0;33m__yield[0m[0m at [0;32mD:/esp/node/managed_components/espressif__arduino-esp32/cores/esp32/esp32-hal-misc.c[0m[0m:[1;31m118[0m
+[0m--- 0x400dd57c: [0;33mGxEPD2_EPD::_waitWhileBusy(char const*, unsigned short)[0m[0m at [0;32mD:/esp/node/components/gxepd2/src/GxEPD2_EPD.cpp[0m[0m:[1;31m155[0m
+[0m--- 0x400ddec3: [0;33mGxEPD2_213_Z98c::_Update_Full()[0m[0m at [0;32mD:/esp/node/components/gxepd2/src/epd3c/GxEPD2_213_Z98c.cpp[0m[0m:[1;31m390[0m
+[0m--- 0x400ddef0: [0;33mGxEPD2_213_Z98c::refresh(bool)[0m[0m at [0;32mD:/esp/node/components/gxepd2/src/epd3c/GxEPD2_213_Z98c.cpp[0m[0m:[1;31m274[0m
+[0m--- 0x400dd18e: [0;33mGxEPD2_3C<GxEPD2_213_Z98c, (unsigned short)250>::nextPage()[0m[0m at [0;32mD:/esp/node/components/gxepd2/src/GxEPD2_3C.h[0m[0m:[1;31m377[0m
+[0m--- 0x400dd2fd: [0;33mPriceTagEPD::renderTag(String const&, String const&, String const&, String const&, String const&)[0m[0m at [0;32mD:/esp/node/components/price_tag_epd/src/price_tag_epd.cpp[0m[0m:[1;31m336[0m
+[0m--- 0x400dc002: [0;33mrender_task(void*)[0m[0m at [0;32mD:/esp/node/main/main.cpp[0m[0m:[1;31m218[0m
+[0m--- 0x4009114e: [0;33mvPortTaskWrapper[0m[0m at [0;32mD:/esp/Espressif/frameworks/esp-idf-v5.4.2/components/freertos/FreeRTOS-Kernel/portable/xtensa/port.c[0m[0m:[1;31m139[0m
+[0m--- 0x4008573e: [0;33mesp_crosscore_isr[0m[0m at [0;32mD:/esp/Espressif/frameworks/esp-idf-v5.4.2/components/esp_system/crosscore_int.c[0m[0m:[1;31m73[0m
+[0m--- 0x40083ac5: [0;33m_xt_lowint1[0m[0m at [0;32mD:/esp/Espressif/frameworks/esp-idf-v5.4.2/components/xtensa/xtensa_vectors.S[0m[0m:[1;31m1240[0m
+[0m--- 0x40092bee: [0;33mvTaskDelay[0m[0m at [0;32mD:/esp/Espressif/frameworks/esp-idf-v5.4.2/components/freertos/FreeRTOS-Kernel/tasks.c[0m[0m:[1;31m1588[0m
+[0m--- 0x400de9f0: [0;33mdelay[0m[0m at [0;32mD:/esp/node/managed_components/espressif__arduino-esp32/cores/esp32/esp32-hal-misc.c[0m[0m:[1;31m213[0m
+[0m--- 0x400dd556: [0;33mGxEPD2_EPD::_waitWhileBusy(char const*, unsigned short)[0m[0m at [0;32mD:/esp/node/components/gxepd2/src/GxEPD2_EPD.cpp[0m[0m:[1;31m147[0m
+[0m--- 0x400ddec3: [0;33mGxEPD2_213_Z98c::_Update_Full()[0m[0m at [0;32mD:/esp/node/components/gxepd2/src/epd3c/GxEPD2_213_Z98c.cpp[0m[0m:[1;31m390[0m
+[0m--- 0x400ddef0: [0;33mGxEPD2_213_Z98c::refresh(bool)[0m[0m at [0;32mD:/esp/node/components/gxepd2/src/epd3c/GxEPD2_213_Z98c.cpp[0m[0m:[1;31m274[0m
+[0m--- 0x400dd18e: [0;33mGxEPD2_3C<GxEPD2_213_Z98c, (unsigned short)250>::nextPage()[0m[0m at [0;32mD:/esp/node/components/gxepd2/src/GxEPD2_3C.h[0m[0m:[1;31m377[0m
+[0m--- 0x400dd2fd: [0;33mPriceTagEPD::renderTag(String const&, String const&, String const&, String const&, String const&)[0m[0m at [0;32mD:/esp/node/components/price_tag_epd/src/price_tag_epd.cpp[0m[0m:[1;31m336[0m
+[0m--- 0x400dc002: [0;33mrender_task(void*)[0m[0m at [0;32mD:/esp/node/main/main.cpp[0m[0m:[1;31m218[0m
+[0m--- 0x4009114e: [0;33mvPortTaskWrapper[0m[0m at [0;32mD:/esp/Espressif/frameworks/esp-idf-v5.4.2/components/freertos/FreeRTOS-Kernel/portable/xtensa/port.c[0m[0m:[1;31m139[0m
+[0m

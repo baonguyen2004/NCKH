@@ -1,0 +1,11 @@
+idf_component_register(
+  SRCS
+    "src/price_tag_epd.cpp"
+  INCLUDE_DIRS
+    "include"
+  REQUIRES
+    arduino-esp32
+    gxepd2
+    adafruit_gfx
+    adafruit_busio
+)

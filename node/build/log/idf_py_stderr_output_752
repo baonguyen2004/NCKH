@@ -1,0 +1,22 @@
+ESP Insights Project commit: HEAD-HASH-NOTFOUND
+ESP RainMaker Project commit: HEAD-HASH-NOTFOUND
+CMake Error at D:/esp/Espressif/frameworks/esp-idf-v5.4.2/tools/cmake/component.cmake:490 (add_library):
+  Cannot find source file:
+
+    D:/esp/node/components/gxepd2/src/GxEPD2.cpp
+
+  Tried extensions .c .C .c++ .cc .cpp .cxx .cu .mpp .m .M .mm .ixx .cppm
+  .ccm .cxxm .c++m .h .hh .h++ .hm .hpp .hxx .in .txx .f .F .for .f77 .f90
+  .f95 .f03 .hip .ispc
+Call Stack (most recent call first):
+  components/gxepd2/CMakeLists.txt:1 (idf_component_register)
+
+
+CMake Error at D:/esp/Espressif/frameworks/esp-idf-v5.4.2/tools/cmake/component.cmake:490 (add_library):
+  No SOURCES given to target: __idf_gxepd2
+Call Stack (most recent call first):
+  components/gxepd2/CMakeLists.txt:1 (idf_component_register)
+
+
+CMake Generate step failed.  Build files cannot be regenerated correctly.
+ninja: error: rebuilding 'build.ninja': subcommand failed

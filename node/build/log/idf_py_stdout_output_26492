@@ -1,0 +1,82 @@
+[0/1] Re-running CMake...
+-- ccache will be used for faster recompilation
+-- git rev-parse returned 'fatal: not a git repository (or any of the parent directories): .git'
+-- Could not use 'git describe' to determine PROJECT_VER.
+-- Building ESP-IDF components for target esp32
+NOTICE: Skipping optional dependency: espressif/esp-sr
+NOTICE: Skipping optional dependency: espressif/esp_hosted
+NOTICE: Skipping optional dependency: espressif/esp_wifi_remote
+NOTICE: Using component placed at D:\esp\Espressif\frameworks\esp-idf-v5.4.2\examples\bluetooth\esp_ble_mesh\common_components\example_init for dependency "example_init", specified in D:\esp\node\main\idf_component.yml
+NOTICE: Skipping optional dependency: espressif/esp-sr
+NOTICE: Skipping optional dependency: espressif/esp_hosted
+NOTICE: Skipping optional dependency: espressif/esp_wifi_remote
+NOTICE: Skipping optional dependency: espressif/esp-sr
+NOTICE: Skipping optional dependency: espressif/esp_hosted
+NOTICE: Skipping optional dependency: espressif/esp_wifi_remote
+NOTICE: Skipping optional dependency: espressif/esp-sr
+NOTICE: Skipping optional dependency: espressif/esp_hosted
+NOTICE: Skipping optional dependency: espressif/esp_wifi_remote
+NOTICE: Skipping optional dependency: espressif/esp-sr
+NOTICE: Skipping optional dependency: espressif/esp_hosted
+NOTICE: Skipping optional dependency: espressif/esp_wifi_remote
+NOTICE: Skipping optional dependency: espressif/esp-sr
+NOTICE: Skipping optional dependency: espressif/esp_hosted
+NOTICE: Skipping optional dependency: espressif/esp_wifi_remote
+NOTICE: Skipping optional dependency: espressif/esp-sr
+NOTICE: Skipping optional dependency: espressif/esp_hosted
+NOTICE: Skipping optional dependency: espressif/esp_wifi_remote
+NOTICE: Skipping optional dependency: espressif/esp-sr
+NOTICE: Skipping optional dependency: espressif/esp_hosted
+NOTICE: Skipping optional dependency: espressif/esp_wifi_remote
+NOTICE: Skipping optional dependency: espressif/esp-sr
+NOTICE: Skipping optional dependency: espressif/esp_hosted
+NOTICE: Skipping optional dependency: espressif/esp_wifi_remote
+NOTICE: Skipping optional dependency: espressif/esp-sr
+NOTICE: Skipping optional dependency: espressif/esp_hosted
+NOTICE: Skipping optional dependency: espressif/esp_wifi_remote
+NOTICE: Skipping optional dependency: espressif/esp-sr
+NOTICE: Skipping optional dependency: espressif/esp_hosted
+NOTICE: Skipping optional dependency: espressif/esp_wifi_remote
+NOTICE: Skipping optional dependency: espressif/esp-sr
+NOTICE: Skipping optional dependency: espressif/esp_hosted
+NOTICE: Skipping optional dependency: espressif/esp_wifi_remote
+NOTICE: Skipping optional dependency: espressif/esp-sr
+NOTICE: Skipping optional dependency: espressif/esp_hosted
+NOTICE: Skipping optional dependency: espressif/esp_wifi_remote
+NOTICE: Processing 29 dependencies:
+NOTICE: [1/29] chmorgan/esp-libhelix-mp3 (1.0.3)
+NOTICE: [2/29] espressif/arduino-esp32 (3.3.2)
+NOTICE: [3/29] espressif/cbor (0.6.0~1)
+NOTICE: [4/29] espressif/esp-dsp (1.7.0)
+NOTICE: [5/29] espressif/esp-modbus (1.0.18)
+NOTICE: [6/29] espressif/esp-serial-flasher (0.0.11)
+NOTICE: [7/29] espressif/esp-zboss-lib (1.6.4)
+NOTICE: [8/29] espressif/esp-zigbee-lib (1.6.7)
+NOTICE: [9/29] espressif/esp_diag_data_store (1.0.2)
+NOTICE: [10/29] espressif/esp_diagnostics (1.2.1)
+NOTICE: [11/29] espressif/esp_insights (1.2.2)
+NOTICE: [12/29] espressif/esp_modem (1.4.1)
+NOTICE: [13/29] espressif/esp_rainmaker (1.5.2)
+NOTICE: [14/29] espressif/esp_rcp_update (1.2.0)
+NOTICE: [15/29] espressif/esp_schedule (1.2.0)
+NOTICE: [16/29] espressif/esp_secure_cert_mgr (2.7.0)
+NOTICE: [17/29] espressif/jsmn (1.1.0)
+NOTICE: [18/29] espressif/json_generator (1.1.2)
+NOTICE: [19/29] espressif/json_parser (1.0.3)
+NOTICE: [20/29] espressif/lan867x (2.0.0)
+NOTICE: [21/29] espressif/lan86xx_common (1.0.0)
+NOTICE: [22/29] espressif/libsodium (1.0.20~2)
+NOTICE: [23/29] espressif/mdns (1.8.2)
+NOTICE: [24/29] espressif/network_provisioning (1.0.2)
+NOTICE: [25/29] espressif/qrcode (0.1.0~2)
+NOTICE: [26/29] espressif/rmaker_common (1.4.6)
+NOTICE: [27/29] example_init (*) (D:\esp\Espressif\frameworks\esp-idf-v5.4.2\examples\bluetooth\esp_ble_mesh\common_components\example_init)
+NOTICE: [28/29] joltwallet/littlefs (1.20.1)
+NOTICE: [29/29] idf (5.4.2)
+-- DEBUG: Use esp-modbus component folder: D:/esp/node/managed_components/espressif__esp-modbus.
+NOTICE: Skipping optional dependency: espressif/esp-sr
+NOTICE: Skipping optional dependency: espressif/esp_hosted
+NOTICE: Skipping optional dependency: espressif/esp_wifi_remote
+-- Configuring incomplete, errors occurred!
+FAILED: build.ninja 
+D:\esp\Espressif\tools\cmake\3.30.2\bin\cmake.exe --regenerate-during-build -SD:\esp\node -BD:\esp\node\build

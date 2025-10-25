@@ -1,0 +1,71 @@
+[1/11] Building CXX object esp-idf/price_tag_epd/CMakeFiles/__idf_price_tag_epd.dir/src/price_tag_epd.cpp.obj
+[2/11] Building CXX object esp-idf/main/CMakeFiles/__idf_main.dir/main.cpp.obj
+D:/esp/node/main/main.cpp:115:1: warning: missing initializer for member 'esp_ble_mesh_cfg_srv_t::model' [-Wmissing-field-initializers]
+  115 | };
+      | ^
+D:/esp/node/main/main.cpp:115:1: warning: missing initializer for member 'esp_ble_mesh_cfg_srv_t::heartbeat_pub' [-Wmissing-field-initializers]
+D:/esp/node/main/main.cpp:115:1: warning: missing initializer for member 'esp_ble_mesh_cfg_srv_t::heartbeat_sub' [-Wmissing-field-initializers]
+D:/esp/node/main/main.cpp:119:1: warning: missing initializer for member 'esp_ble_mesh_model::element_idx' [-Wmissing-field-initializers]
+  119 | };
+      | ^
+D:/esp/node/main/main.cpp:119:1: warning: missing initializer for member 'esp_ble_mesh_model::model_idx' [-Wmissing-field-initializers]
+D:/esp/node/main/main.cpp:119:1: warning: missing initializer for member 'esp_ble_mesh_model::flags' [-Wmissing-field-initializers]
+D:/esp/node/main/main.cpp:119:1: warning: missing initializer for member 'esp_ble_mesh_model::element' [-Wmissing-field-initializers]
+D:/esp/node/main/main.cpp:119:1: warning: missing initializer for member 'esp_ble_mesh_model::cb' [-Wmissing-field-initializers]
+D:/esp/node/main/main.cpp:130:1: warning: missing initializer for member 'esp_ble_mesh_model::element_idx' [-Wmissing-field-initializers]
+  130 | };
+      | ^
+D:/esp/node/main/main.cpp:130:1: warning: missing initializer for member 'esp_ble_mesh_model::model_idx' [-Wmissing-field-initializers]
+D:/esp/node/main/main.cpp:130:1: warning: missing initializer for member 'esp_ble_mesh_model::flags' [-Wmissing-field-initializers]
+D:/esp/node/main/main.cpp:130:1: warning: missing initializer for member 'esp_ble_mesh_model::element' [-Wmissing-field-initializers]
+D:/esp/node/main/main.cpp:130:1: warning: missing initializer for member 'esp_ble_mesh_model::cb' [-Wmissing-field-initializers]
+D:/esp/node/main/main.cpp:134:1: warning: missing initializer for member 'esp_ble_mesh_elem_t::element_addr' [-Wmissing-field-initializers]
+  134 | };
+      | ^
+D:/esp/node/main/main.cpp:140:1: warning: missing initializer for member 'esp_ble_mesh_comp_t::pid' [-Wmissing-field-initializers]
+  140 | };
+      | ^
+D:/esp/node/main/main.cpp:140:1: warning: missing initializer for member 'esp_ble_mesh_comp_t::vid' [-Wmissing-field-initializers]
+D:/esp/node/main/main.cpp:144:1: warning: missing initializer for member 'esp_ble_mesh_prov_t::uri' [-Wmissing-field-initializers]
+  144 | };
+      | ^
+D:/esp/node/main/main.cpp:144:1: warning: missing initializer for member 'esp_ble_mesh_prov_t::oob_info' [-Wmissing-field-initializers]
+D:/esp/node/main/main.cpp:144:1: warning: missing initializer for member 'esp_ble_mesh_prov_t::oob_pub_key' [-Wmissing-field-initializers]
+D:/esp/node/main/main.cpp:144:1: warning: missing initializer for member 'esp_ble_mesh_prov_t::oob_pub_key_cb' [-Wmissing-field-initializers]
+D:/esp/node/main/main.cpp:144:1: warning: missing initializer for member 'esp_ble_mesh_prov_t::oob_type' [-Wmissing-field-initializers]
+D:/esp/node/main/main.cpp:144:1: warning: missing initializer for member 'esp_ble_mesh_prov_t::static_val' [-Wmissing-field-initializers]
+D:/esp/node/main/main.cpp:144:1: warning: missing initializer for member 'esp_ble_mesh_prov_t::static_val_len' [-Wmissing-field-initializers]
+D:/esp/node/main/main.cpp:144:1: warning: missing initializer for member 'esp_ble_mesh_prov_t::output_size' [-Wmissing-field-initializers]
+D:/esp/node/main/main.cpp:144:1: warning: missing initializer for member 'esp_ble_mesh_prov_t::output_actions' [-Wmissing-field-initializers]
+D:/esp/node/main/main.cpp:144:1: warning: missing initializer for member 'esp_ble_mesh_prov_t::input_size' [-Wmissing-field-initializers]
+D:/esp/node/main/main.cpp:144:1: warning: missing initializer for member 'esp_ble_mesh_prov_t::input_actions' [-Wmissing-field-initializers]
+D:/esp/node/main/main.cpp:144:1: warning: missing initializer for member 'esp_ble_mesh_prov_t::output_num_cb' [-Wmissing-field-initializers]
+D:/esp/node/main/main.cpp:144:1: warning: missing initializer for member 'esp_ble_mesh_prov_t::output_str_cb' [-Wmissing-field-initializers]
+D:/esp/node/main/main.cpp:144:1: warning: missing initializer for member 'esp_ble_mesh_prov_t::input_cb' [-Wmissing-field-initializers]
+D:/esp/node/main/main.cpp:144:1: warning: missing initializer for member 'esp_ble_mesh_prov_t::link_open_cb' [-Wmissing-field-initializers]
+D:/esp/node/main/main.cpp:144:1: warning: missing initializer for member 'esp_ble_mesh_prov_t::link_close_cb' [-Wmissing-field-initializers]
+D:/esp/node/main/main.cpp:144:1: warning: missing initializer for member 'esp_ble_mesh_prov_t::complete_cb' [-Wmissing-field-initializers]
+D:/esp/node/main/main.cpp:144:1: warning: missing initializer for member 'esp_ble_mesh_prov_t::reset_cb' [-Wmissing-field-initializers]
+D:/esp/node/main/main.cpp: In function 'void example_ble_mesh_custom_model_cb(esp_ble_mesh_model_cb_event_t, esp_ble_mesh_model_cb_param_t*)':
+D:/esp/node/main/main.cpp:261:33: warning: missing initializer for member 'RenderMsg::sale' [-Wmissing-field-initializers]
+  261 |                 RenderMsg m = {0};
+      |                                 ^
+D:/esp/node/main/main.cpp:261:33: warning: missing initializer for member 'RenderMsg::price_orig' [-Wmissing-field-initializers]
+D:/esp/node/main/main.cpp:261:33: warning: missing initializer for member 'RenderMsg::price_final' [-Wmissing-field-initializers]
+D:/esp/node/main/main.cpp:261:33: warning: missing initializer for member 'RenderMsg::ean13' [-Wmissing-field-initializers]
+[3/11] Linking C static library esp-idf\price_tag_epd\libprice_tag_epd.a
+[4/11] Performing build step for 'bootloader'
+[1/1] C:\WINDOWS\system32\cmd.exe /C "cd /D D:\esp\node\build\bootloader\esp-idf\esptool_py && D:\esp\Espressif\python_env\idf5.4_py3.11_env\Scripts\python.exe D:/esp/Espressif/frameworks/esp-idf-v5.4.2/components/partition_table/check_sizes.py --offset 0x8000 bootloader 0x1000 D:/esp/node/build/bootloader/bootloader.bin"
+Bootloader binary size 0x6570 bytes. 0xa90 bytes (9%) free.
+[5/11] No install step for 'bootloader'
+[6/11] Linking C static library esp-idf\main\libmain.a
+[7/11] Completed 'bootloader'
+[8/11] Generating ld/sections.ld
+[9/11] Linking CXX executable vendor_server.elf
+FAILED: vendor_server.elf 
+C:\WINDOWS\system32\cmd.exe /C "cd . && D:\esp\Espressif\tools\xtensa-esp-elf\esp-14.2.0_20241119\xtensa-esp-elf\bin\xtensa-esp32-elf-g++.exe -mlongcalls -Wno-frame-address  -fno-builtin-memcpy -fno-builtin-memset -fno-builtin-bzero -fno-builtin-stpcpy -fno-builtin-strncpy -Wl,--cref -Wl,--defsym=IDF_TARGET_ESP32=0 -Wl,--Map=D:/esp/node/build/vendor_server.map -Wl,--no-warn-rwx-segments -Wl,--orphan-handling=warn -fno-rtti -fno-lto -Wl,--gc-sections -Wl,--warn-common -T esp32.peripherals.ld -T esp32.rom.ld -T esp32.rom.api.ld -T esp32.rom.libgcc.ld -T esp32.rom.newlib-data.ld -T esp32.rom.syscalls.ld -T esp32.rom.newlib-funcs.ld -T memory.ld -T sections.ld @CMakeFiles\vendor_server.elf.rsp -o vendor_server.elf && cd ."
+D:/esp/Espressif/tools/xtensa-esp-elf/esp-14.2.0_20241119/xtensa-esp-elf/bin/../lib/gcc/xtensa-esp-elf/14.2.0/../../../../xtensa-esp-elf/bin/ld.exe: esp-idf/main/libmain.a(main.cpp.obj):(.literal._ZL11render_taskPv+0x14): undefined reference to `PriceTagEPD::renderTag(String const&, String const&, String const&, String const&, String const&)'
+D:/esp/Espressif/tools/xtensa-esp-elf/esp-14.2.0_20241119/xtensa-esp-elf/bin/../lib/gcc/xtensa-esp-elf/14.2.0/../../../../xtensa-esp-elf/bin/ld.exe: esp-idf/main/libmain.a(main.cpp.obj): in function `render_task(void*)':
+D:/esp/node/main/main.cpp:217:(.text._ZL11render_taskPv+0x7f): undefined reference to `PriceTagEPD::renderTag(String const&, String const&, String const&, String const&, String const&)'
+collect2.exe: error: ld returned 1 exit status
+ninja: build stopped: subcommand failed.

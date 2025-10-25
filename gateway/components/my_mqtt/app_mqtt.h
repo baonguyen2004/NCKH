@@ -10,6 +10,8 @@ typedef struct {
     uint16_t add;
     int32_t  price;
     char     barcode[EP_BARCODE_MAX_LEN];
+    bool     has_sale;   // true nếu JSON có "sale"
+    uint8_t  sale;       // 0..100 (phần trăm)
 } CmdMsg;
 
 // lấy bản ghi mới nhất (trả true nếu có dữ liệu)

@@ -1,0 +1,138 @@
+[1/12] Performing build step for 'bootloader'
+[1/1] C:\WINDOWS\system32\cmd.exe /C "cd /D D:\esp\node\build\bootloader\esp-idf\esptool_py && D:\esp\Espressif\python_env\idf5.4_py3.11_env\Scripts\python.exe D:/esp/Espressif/frameworks/esp-idf-v5.4.2/components/partition_table/check_sizes.py --offset 0x8000 bootloader 0x1000 D:/esp/node/build/bootloader/bootloader.bin"
+Bootloader binary size 0x6570 bytes. 0xa90 bytes (9%) free.
+[2/12] No install step for 'bootloader'
+[3/12] Completed 'bootloader'
+[4/12] Building CXX object esp-idf/price_tag_epd/CMakeFiles/__idf_price_tag_epd.dir/src/price_tag_epd.cpp.obj
+[5/12] Linking C static library esp-idf\price_tag_epd\libprice_tag_epd.a
+[6/12] Building CXX object esp-idf/main/CMakeFiles/__idf_main.dir/main.cpp.obj
+D:/esp/node/main/main.cpp:115:1: warning: missing initializer for member 'esp_ble_mesh_cfg_srv_t::model' [-Wmissing-field-initializers]
+  115 | };
+      | ^
+D:/esp/node/main/main.cpp:115:1: warning: missing initializer for member 'esp_ble_mesh_cfg_srv_t::heartbeat_pub' [-Wmissing-field-initializers]
+D:/esp/node/main/main.cpp:115:1: warning: missing initializer for member 'esp_ble_mesh_cfg_srv_t::heartbeat_sub' [-Wmissing-field-initializers]
+D:/esp/node/main/main.cpp:119:1: warning: missing initializer for member 'esp_ble_mesh_model::element_idx' [-Wmissing-field-initializers]
+  119 | };
+      | ^
+D:/esp/node/main/main.cpp:119:1: warning: missing initializer for member 'esp_ble_mesh_model::model_idx' [-Wmissing-field-initializers]
+D:/esp/node/main/main.cpp:119:1: warning: missing initializer for member 'esp_ble_mesh_model::flags' [-Wmissing-field-initializers]
+D:/esp/node/main/main.cpp:119:1: warning: missing initializer for member 'esp_ble_mesh_model::element' [-Wmissing-field-initializers]
+D:/esp/node/main/main.cpp:119:1: warning: missing initializer for member 'esp_ble_mesh_model::cb' [-Wmissing-field-initializers]
+D:/esp/node/main/main.cpp:130:1: warning: missing initializer for member 'esp_ble_mesh_model::element_idx' [-Wmissing-field-initializers]
+  130 | };
+      | ^
+D:/esp/node/main/main.cpp:130:1: warning: missing initializer for member 'esp_ble_mesh_model::model_idx' [-Wmissing-field-initializers]
+D:/esp/node/main/main.cpp:130:1: warning: missing initializer for member 'esp_ble_mesh_model::flags' [-Wmissing-field-initializers]
+D:/esp/node/main/main.cpp:130:1: warning: missing initializer for member 'esp_ble_mesh_model::element' [-Wmissing-field-initializers]
+D:/esp/node/main/main.cpp:130:1: warning: missing initializer for member 'esp_ble_mesh_model::cb' [-Wmissing-field-initializers]
+D:/esp/node/main/main.cpp:134:1: warning: missing initializer for member 'esp_ble_mesh_elem_t::element_addr' [-Wmissing-field-initializers]
+  134 | };
+      | ^
+D:/esp/node/main/main.cpp:140:1: warning: missing initializer for member 'esp_ble_mesh_comp_t::pid' [-Wmissing-field-initializers]
+  140 | };
+      | ^
+D:/esp/node/main/main.cpp:140:1: warning: missing initializer for member 'esp_ble_mesh_comp_t::vid' [-Wmissing-field-initializers]
+D:/esp/node/main/main.cpp:144:1: warning: missing initializer for member 'esp_ble_mesh_prov_t::uri' [-Wmissing-field-initializers]
+  144 | };
+      | ^
+D:/esp/node/main/main.cpp:144:1: warning: missing initializer for member 'esp_ble_mesh_prov_t::oob_info' [-Wmissing-field-initializers]
+D:/esp/node/main/main.cpp:144:1: warning: missing initializer for member 'esp_ble_mesh_prov_t::oob_pub_key' [-Wmissing-field-initializers]
+D:/esp/node/main/main.cpp:144:1: warning: missing initializer for member 'esp_ble_mesh_prov_t::oob_pub_key_cb' [-Wmissing-field-initializers]
+D:/esp/node/main/main.cpp:144:1: warning: missing initializer for member 'esp_ble_mesh_prov_t::oob_type' [-Wmissing-field-initializers]
+D:/esp/node/main/main.cpp:144:1: warning: missing initializer for member 'esp_ble_mesh_prov_t::static_val' [-Wmissing-field-initializers]
+D:/esp/node/main/main.cpp:144:1: warning: missing initializer for member 'esp_ble_mesh_prov_t::static_val_len' [-Wmissing-field-initializers]
+D:/esp/node/main/main.cpp:144:1: warning: missing initializer for member 'esp_ble_mesh_prov_t::output_size' [-Wmissing-field-initializers]
+D:/esp/node/main/main.cpp:144:1: warning: missing initializer for member 'esp_ble_mesh_prov_t::output_actions' [-Wmissing-field-initializers]
+D:/esp/node/main/main.cpp:144:1: warning: missing initializer for member 'esp_ble_mesh_prov_t::input_size' [-Wmissing-field-initializers]
+D:/esp/node/main/main.cpp:144:1: warning: missing initializer for member 'esp_ble_mesh_prov_t::input_actions' [-Wmissing-field-initializers]
+D:/esp/node/main/main.cpp:144:1: warning: missing initializer for member 'esp_ble_mesh_prov_t::output_num_cb' [-Wmissing-field-initializers]
+D:/esp/node/main/main.cpp:144:1: warning: missing initializer for member 'esp_ble_mesh_prov_t::output_str_cb' [-Wmissing-field-initializers]
+D:/esp/node/main/main.cpp:144:1: warning: missing initializer for member 'esp_ble_mesh_prov_t::input_cb' [-Wmissing-field-initializers]
+D:/esp/node/main/main.cpp:144:1: warning: missing initializer for member 'esp_ble_mesh_prov_t::link_open_cb' [-Wmissing-field-initializers]
+D:/esp/node/main/main.cpp:144:1: warning: missing initializer for member 'esp_ble_mesh_prov_t::link_close_cb' [-Wmissing-field-initializers]
+D:/esp/node/main/main.cpp:144:1: warning: missing initializer for member 'esp_ble_mesh_prov_t::complete_cb' [-Wmissing-field-initializers]
+D:/esp/node/main/main.cpp:144:1: warning: missing initializer for member 'esp_ble_mesh_prov_t::reset_cb' [-Wmissing-field-initializers]
+D:/esp/node/main/main.cpp: In function 'void example_ble_mesh_custom_model_cb(esp_ble_mesh_model_cb_event_t, esp_ble_mesh_model_cb_param_t*)':
+D:/esp/node/main/main.cpp:261:33: warning: missing initializer for member 'RenderMsg::sale' [-Wmissing-field-initializers]
+  261 |                 RenderMsg m = {0};
+      |                                 ^
+D:/esp/node/main/main.cpp:261:33: warning: missing initializer for member 'RenderMsg::price_orig' [-Wmissing-field-initializers]
+D:/esp/node/main/main.cpp:261:33: warning: missing initializer for member 'RenderMsg::price_final' [-Wmissing-field-initializers]
+D:/esp/node/main/main.cpp:261:33: warning: missing initializer for member 'RenderMsg::ean13' [-Wmissing-field-initializers]
+[7/12] Linking C static library esp-idf\main\libmain.a
+[8/12] Generating ld/sections.ld
+[9/12] Linking CXX executable vendor_server.elf
+[10/12] Generating binary image from built executable
+esptool.py v4.8.1
+Creating esp32 image...
+Merged 2 ELF sections
+Successfully created esp32 image.
+Generated D:/esp/node/build/vendor_server.bin
+[11/12] C:\WINDOWS\system32\cmd.exe /C "cd /D D:\esp\node\build\esp-idf\esptool_py && D:\esp\Espressif\python_env\idf5.4_py3.11_env\Scripts\python.exe D:/esp/Espressif/frameworks/esp-idf-v5.4.2/components/partition_table/check_sizes.py --offset 0x8000 partition --type app D:/esp/node/build/partition_table/partition-table.bin D:/esp/node/build/vendor_server.bin"
+vendor_server.bin binary size 0xe0200 bytes. Smallest app partition is 0x177000 bytes. 0x96e00 bytes (40%) free.
+[11/12] C:\WINDOWS\system32\cmd.exe /C "cd /D D:\esp\Espressif\frameworks\esp-idf-v5.4.2\components\esptool_py && D:\esp\Espressif\tools\cmake\3.30.2\bin\cmake.exe -D IDF_PATH=D:/esp/Espressif/frameworks/esp-idf-v5.4.2 -D SERIAL_TOOL=D:/esp/Espressif/python_env/idf5.4_py3.11_env/Scripts/python.exe;;D:/esp/Espressif/frameworks/esp-idf-v5.4.2/components/esptool_py/esptool/esptool.py;--chip;esp32 -D SERIAL_TOOL_ARGS=--before=default_reset;--after=hard_reset;write_flash;@flash_args -D WORKING_DIRECTORY=D:/esp/node/build -P D:/esp/Espressif/frameworks/esp-idf-v5.4.2/components/esptool_py/run_serial_tool.cmake"
+esptool.py --chip esp32 -p COM8 -b 460800 --before=default_reset --after=hard_reset write_flash --flash_mode dio --flash_freq 40m --flash_size 2MB 0x1000 bootloader/bootloader.bin 0x10000 vendor_server.bin 0x8000 partition_table/partition-table.bin
+esptool.py v4.8.1
+Serial port COM8
+Connecting......
+Chip is ESP32-D0WD-V3 (revision v3.1)
+Features: WiFi, BT, Dual Core, 240MHz, VRef calibration in efuse, Coding Scheme None
+Crystal is 40MHz
+MAC: 00:4b:12:8f:62:c4
+Uploading stub...
+Running stub...
+Stub running...
+Changing baud rate to 460800
+Changed.
+Configuring flash size...
+Flash will be erased from 0x00001000 to 0x00007fff...
+Flash will be erased from 0x00010000 to 0x000f0fff...
+Flash will be erased from 0x00008000 to 0x00008fff...
+SHA digest in image updated
+Compressed 25968 bytes to 16364...
+Writing at 0x00001000... (100 %)
+Wrote 25968 bytes (16364 compressed) at 0x00001000 in 0.5 seconds (effective 380.6 kbit/s)...
+Hash of data verified.
+Compressed 918016 bytes to 533365...
+Writing at 0x00010000... (3 %)
+Writing at 0x0001d7a7... (6 %)
+Writing at 0x0002d13d... (9 %)
+Writing at 0x00036bac... (12 %)
+Writing at 0x00042354... (15 %)
+Writing at 0x00047b88... (18 %)
+Writing at 0x0004dea6... (21 %)
+Writing at 0x00053ffc... (24 %)
+Writing at 0x00059d0c... (27 %)
+Writing at 0x0005f7b1... (30 %)
+Writing at 0x0006540e... (33 %)
+Writing at 0x0006bb6b... (36 %)
+Writing at 0x0007190c... (39 %)
+Writing at 0x00077b43... (42 %)
+Writing at 0x0007dbc3... (45 %)
+Writing at 0x00083cd3... (48 %)
+Writing at 0x00089a4e... (51 %)
+Writing at 0x0008fb39... (54 %)
+Writing at 0x000956c7... (57 %)
+Writing at 0x0009b605... (60 %)
+Writing at 0x000a189d... (63 %)
+Writing at 0x000a7409... (66 %)
+Writing at 0x000ace49... (69 %)
+Writing at 0x000b2895... (72 %)
+Writing at 0x000b830f... (75 %)
+Writing at 0x000be34d... (78 %)
+Writing at 0x000c4582... (81 %)
+Writing at 0x000cdf4c... (84 %)
+Writing at 0x000d544b... (87 %)
+Writing at 0x000db6f4... (90 %)
+Writing at 0x000e105d... (93 %)
+Writing at 0x000e6a3e... (96 %)
+Writing at 0x000eccba... (100 %)
+Wrote 918016 bytes (533365 compressed) at 0x00010000 in 12.9 seconds (effective 571.5 kbit/s)...
+Hash of data verified.
+Compressed 3072 bytes to 105...
+Writing at 0x00008000... (100 %)
+Wrote 3072 bytes (105 compressed) at 0x00008000 in 0.0 seconds (effective 1005.2 kbit/s)...
+Hash of data verified.
+
+Leaving...
+Hard resetting via RTS pin...

@@ -1,0 +1,591 @@
+ets Jul 29 2019 12:21:46
+
+rst:0x1 (POWERON_RESET),boot:0x13 (SPI_FAST_FLASH_BOOT)
+configsip: 0, SPIWP:0xee
+clk_drv:0x00,q_drv:0x00,d_drv:0x00,cs0_drv:0x00,hd_drv:0x00,wp_drv:0x00
+mode:DIO, clock div:2
+load:0x3fff0030,len:6276
+load:0x40078000,len:15736
+load:0x40080400,len:4
+load:0x40080404,len:3860
+entry 0x4008063c
+[0;32mI (29) boot: ESP-IDF v5.4.2 2nd stage bootloader[0m
+[0;32mI (29) boot: compile time Oct 16 2025 10:02:34[0m
+[0;32mI (30) boot: Multicore bootloader[0m
+[0;32mI (31) boot: chip revision: v3.1[0m
+[0;32mI (34) boot.esp32: SPI Speed      : 40MHz[0m
+[0;32mI (37) boot.esp32: SPI Mode       : DIO[0m
+[0;32mI (41) boot.esp32: SPI Flash Size : 2MB[0m
+[0;32mI (44) boot: Enabling RNG early entropy source...[0m
+[0;32mI (49) boot: Partition Table:[0m
+[0;32mI (51) boot: ## Label            Usage          Type ST Offset   Length[0m
+[0;32mI (58) boot:  0 nvs              WiFi data        01 02 00009000 00006000[0m
+[0;32mI (64) boot:  1 phy_init         RF data          01 01 0000f000 00001000[0m
+[0;32mI (71) boot:  2 factory          factory app      00 00 00010000 00177000[0m
+[0;32mI (77) boot: End of partition table[0m
+[0;32mI (81) esp_image: segment 0: paddr=00010020 vaddr=3f400020 size=3c1e0h (246240) map[0m
+[0;32mI (172) esp_image: segment 1: paddr=0004c208 vaddr=3ff80000 size=0001ch (    28) load[0m
+[0;32mI (173) esp_image: segment 2: paddr=0004c22c vaddr=3ffbdb60 size=03dech ( 15852) load[0m
+[0;32mI (182) esp_image: segment 3: paddr=00050020 vaddr=400d0020 size=10f020h (1110048) map[0m
+[0;32mI (563) esp_image: segment 4: paddr=0015f048 vaddr=3ffc194c size=0231ch (  8988) load[0m
+[0;32mI (567) esp_image: segment 5: paddr=0016136c vaddr=40080000 size=1ec20h (125984) load[0m
+[0;32mI (631) boot: Loaded app from partition at offset 0x10000[0m
+[0;32mI (631) boot: Disabling RNG early entropy source...[0m
+[0;32mI (641) cpu_start: Multicore app[0m
+[0;32mI (650) cpu_start: Pro cpu start user code[0m
+[0;32mI (650) cpu_start: cpu freq: 160000000 Hz[0m
+[0;32mI (650) app_init: Application information:[0m
+[0;32mI (650) app_init: Project name:     Gateway[0m
+[0;32mI (654) app_init: App version:      1[0m
+[0;32mI (657) app_init: Compile time:     Oct 20 2025 15:58:03[0m
+[0;32mI (662) app_init: ELF file SHA256:  b9673466a...[0m
+[0;32mI (667) app_init: ESP-IDF:          v5.4.2[0m
+[0;32mI (670) efuse_init: Min chip rev:     v0.0[0m
+[0;32mI (674) efuse_init: Max chip rev:     v3.99 [0m
+[0;32mI (678) efuse_init: Chip rev:         v3.1[0m
+[0;32mI (682) heap_init: Initializing. RAM available for dynamic allocation:[0m
+[0;32mI (689) heap_init: At 3FFAFF10 len 000000F0 (0 KiB): DRAM[0m
+[0;32mI (693) heap_init: At 3FFB6388 len 00001C78 (7 KiB): DRAM[0m
+[0;32mI (699) heap_init: At 3FFB9A20 len 00004108 (16 KiB): DRAM[0m
+[0;32mI (704) heap_init: At 3FFCF850 len 000107B0 (65 KiB): DRAM[0m
+[0;32mI (709) heap_init: At 3FFE0440 len 00003AE0 (14 KiB): D/IRAM[0m
+[0;32mI (714) heap_init: At 3FFE4350 len 0001BCB0 (111 KiB): D/IRAM[0m
+[0;32mI (720) heap_init: At 4009EC20 len 000013E0 (4 KiB): IRAM[0m
+[0;32mI (727) spi_flash: detected chip: generic[0m
+[0;32mI (729) spi_flash: flash io: dio[0m
+[0;33mW (732) spi_flash: Detected size(4096k) larger than the size in the binary image header(2048k). Using the size in the binary image header.[0m
+[0;32mI (745) coexist: coex firmware version: 7b9a184[0m
+[0;32mI (749) main_task: Started on CPU0[0m
+[0;32mI (759) main_task: Calling app_main()[0m
+[0;32mI (759) EXAMPLE: Initializing...[0m
+[0;32mI (809) BTDM_INIT: BT controller compile version [b992c7d][0m
+[0;32mI (809) BTDM_INIT: Bluetooth MAC: 3c:8a:1f:0c:d8:ae[0m
+[0;32mI (809) phy_init: phy_version 4860,6b7a6e5,Feb  6 2025,14:47:07[0m
+[0;32mI (899) phy_init: Saving new calibration data due to checksum failure or outdated calibration data, mode(0)[0m
+[0;32mI (1249) wifi:wifi driver task: 3ffda68c, prio:23, stack:6656, core=0[0m
+[0;32mI (1259) wifi:wifi firmware version: bea31f3[0m
+[0;32mI (1269) wifi:wifi certification version: v7.0[0m
+[0;32mI (1269) wifi:config NVS flash: enabled[0m
+[0;32mI (1269) wifi:config nano formatting: disabled[0m
+[0;32mI (1269) wifi:Init data frame dynamic rx buffer num: 32[0m
+[0;32mI (1279) wifi:Init static rx mgmt buffer num: 5[0m
+[0;32mI (1279) wifi:Init management short buffer num: 32[0m
+[0;32mI (1279) wifi:Init dynamic tx buffer num: 32[0m
+[0;32mI (1289) wifi:Init static rx buffer size: 1600[0m
+[0;32mI (1289) wifi:Init static rx buffer num: 10[0m
+[0;32mI (1299) wifi:Init dynamic rx buffer num: 32[0m
+[0;32mI (1299) wifi_init: rx ba win: 6[0m
+[0;32mI (1299) wifi_init: accept mbox: 6[0m
+[0;32mI (1309) wifi_init: tcpip mbox: 32[0m
+[0;32mI (1309) wifi_init: udp mbox: 6[0m
+[0;32mI (1309) wifi_init: tcp mbox: 6[0m
+[0;32mI (1309) wifi_init: tcp tx win: 5760[0m
+[0;32mI (1319) wifi_init: tcp rx win: 5760[0m
+[0;32mI (1319) wifi_init: tcp mss: 1440[0m
+[0;32mI (1319) wifi_init: WiFi IRAM OP enabled[0m
+[0;32mI (1329) wifi_init: WiFi RX IRAM OP enabled[0m
+[0;33mW (1329) wifi:Password length matches WPA2 standards, authmode threshold changes from OPEN to WPA2[0m
+[0;32mI (1339) wifi:mode : sta (3c:8a:1f:0c:d8:ac)[0m
+[0;32mI (1339) wifi:enable tsf[0m
+[0;32mI (1349) wifi station: wifi_init_sta finished.[0m
+[0;32mI (1449) wifi:new:<2,0>, old:<1,0>, ap:<255,255>, sta:<2,0>, prof:1, snd_ch_cfg:0x0[0m
+[0;32mI (1449) wifi:state: init -> auth (0xb0)[0m
+[0;32mI (1459) wifi:state: auth -> assoc (0x0)[0m
+[0;32mI (1469) wifi:state: assoc -> run (0x10)[0m
+[0;32mI (1499) wifi:connected with BaoNguyen, aid = 3, channel 2, BW20, bssid = 66:66:10:be:90:b1[0m
+[0;32mI (1499) wifi:security: WPA2-PSK, phy: bgn, rssi: -67[0m
+[0;32mI (1499) wifi:pm start, type: 1[0m
+
+[0;32mI (1499) wifi:dp: 1, bi: 102400, li: 3, scale listen interval from 307200 us to 307200 us[0m
+[0;32mI (1549) wifi:dp: 2, bi: 102400, li: 4, scale listen interval from 307200 us to 409600 us[0m
+[0;32mI (1549) wifi:AP's beacon interval = 102400 us, DTIM period = 2[0m
+[0;32mI (2549) esp_netif_handlers: sta ip: 10.209.139.117, mask: 255.255.255.0, gw: 10.209.139.103[0m
+[0;32mI (2549) wifi station: got ip:10.209.139.117[0m
+[0;32mI (2549) wifi station: connected to ap SSID:BaoNguyen password:30032004[0m
+[0;32mI (2549) mqtts_example: [APP] Free memory: 121044 bytes[0m
+[0;32mI (2559) mqtts_example: Other event id:7[0m
+[0;32mI (2569) EXAMPLE_NVS: Open namespace done, name "mesh_example"[0m
+[0;32mI (2679) EXAMPLE: ESP_BLE_MESH_PROV_REGISTER_COMP_EVT, err_code 0[0m
+[0;32mI (2679) EXAMPLE_NVS: Restore, key "vendor_client", length 4[0m
+[0;32mI (2679) EXAMPLE_NVS: Restore, data: 05 00 00 00[0m
+[0;32mI (2689) EXAMPLE: Restore, server_addr 0x0005, vnd_tid 0x0000[0m
+[0;32mI (2689) EXAMPLE: ESP_BLE_MESH_PROVISIONER_SET_DEV_UUID_MATCH_COMP_EVT, err_code 0[0m
+[0;32mI (2709) EXAMPLE: ESP_BLE_MESH_PROVISIONER_PROV_ENABLE_COMP_EVT, err_code 0[0m
+[0;33mW (2709) BLE_MESH: AppKey exists, AppKeyIndex updated[0m
+[0;32mI (2709) EXAMPLE: ESP_BLE_MESH_PROVISIONER_ADD_LOCAL_APP_KEY_COMP_EVT, err_code 0[0m
+[0;32mI (2719) EXAMPLE: ESP_BLE_MESH_PROVISIONER_BIND_APP_KEY_TO_MODEL_COMP_EVT, err_code 0[0m
+[0;32mI (2729) Device address: cc 50 e3 a3 b8 4e[0m
+[0;32mI (2729) EXAMPLE: Address type 0x00, adv type 0x00[0m
+[0;32mI (2729) Device UUID: 32 10 00 00 00 00 00 00 00 00 00 00 00 00 00 00[0m
+[0;32mI (2739) EXAMPLE: oob info 0x0000, bearer PB-GATT[0m
+[0;32mI (2749) EXAMPLE: ESP_BLE_MESH_PROVISIONER_ADD_UNPROV_DEV_COMP_EVT, err_code 0[0m
+[0;32mI (2749) EXAMPLE: ESP BLE Mesh Provisioner initialized (UUID filter on)[0m
+[0;32mI (2759) main_task: Returned from app_main()[0m
+[0;32mI (2779) wifi:<ba-add>idx:0 (ifx:0, 66:66:10:be:90:b1), tid:0, ssn:3, winSize:64[0m
+[0;32mI (3339) mqtts_example: MQTT_EVENT_CONNECTED[0m
+[0;32mI (3339) mqtts_example: sent subscribe successful, msg_id=63455[0m
+[0;32mI (3709) mqtts_example: MQTT_EVENT_SUBSCRIBED, msg_id=63455[0m
+[0;32mI (4169) EXAMPLE: ESP_BLE_MESH_PROVISIONER_PROV_LINK_OPEN_EVT, bearer PB-GATT[0m
+[0;33mW (4869) BT_HCI: hci cmd send: disconnect: hdl 0x0, rsn:0x13[0m
+[0;33mW (4869) BT_APPL: gattc_conn_cb: if=3 st=0 id=3 rsn=0x16[0m
+[0;32mI (4869) EXAMPLE: node_index 0, primary_addr 0x0005, element_num 1, net_idx 0x000[0m
+[0;32mI (4879) uuid: 32 10 00 00 00 00 00 00 00 00 00 00 00 00 00 00[0m
+[0;33mW (4879) BT_HCI: hcif disc complete: hdl 0x0, rsn 0x16 dev_find 1[0m
+[0;32mI (4889) EXAMPLE_NVS: Store, key "vendor_client", length 4[0m
+[0;32mI (4889) EXAMPLE_NVS: Store, data: 05 00 00 00[0m
+[0;32mI (4899) EXAMPLE: ESP_BLE_MESH_PROVISIONER_PROV_LINK_CLOSE_EVT, bearer PB-GATT, reason 0x16[0m
+[0;32mI (4929) EXAMPLE: ESP_BLE_MESH_PROVISIONER_SET_NODE_NAME_COMP_EVT, err_code 0[0m
+[0;32mI (4939) EXAMPLE: Node 0 name NODE-00[0m
+[0;32mI (5169) EXAMPLE: Config client, err_code 0, event 0, addr 0x0005, opcode 0x8008[0m
+[0;32mI (5169) Composition data: e5 02 00 00 00 00 0a 00 03 00 00 00 01 01 00 00[0m
+[0;32mI (5169) Composition data: e5 02 01 00[0m
+[0;32mI (5179) EXAMPLE: ********************** Composition Data Start **********************[0m
+[0;32mI (5179) EXAMPLE: * CID 0x02e5, PID 0x0000, VID 0x0000, CRPL 0x000a, Features 0x0003 *[0m
+[0;32mI (5189) EXAMPLE: * Loc 0x0000, NumS 0x01, NumV 0x01 *[0m
+[0;32mI (5199) EXAMPLE: * SIG Model ID 0x0000 *[0m
+[0;32mI (5199) EXAMPLE: * Vendor Model ID 0x0001, Company ID 0x02e5 *[0m
+[0;32mI (5209) EXAMPLE: *********************** Composition Data End ***********************[0m
+[0;32mI (5279) EXAMPLE: ESP_BLE_MESH_PROVISIONER_STORE_NODE_COMP_DATA_COMP_EVT, err_code 0[0m
+[0;32mI (6889) EXAMPLE: Config client, err_code 0, event 1, addr 0x0005, opcode 0x0000[0m
+[0;32mI (7039) EXAMPLE: Config client, err_code 0, event 1, addr 0x0005, opcode 0x803d[0m
+[0;33mW (7039) EXAMPLE: example_ble_mesh_config_client_cb, Provision and config successfully[0m
+[0;32mI (77059) Device address: cc 50 e3 a3 b8 4e[0m
+[0;32mI (77059) EXAMPLE: Address type 0x00, adv type 0x03[0m
+[0;32mI (77059) Device UUID: 32 10 00 00 00 00 00 00 00 00 00 00 00 00 00 00[0m
+[0;32mI (77059) EXAMPLE: oob info 0x0000, bearer PB-ADV[0m
+[0;32mI (77079) EXAMPLE: ESP_BLE_MESH_PROVISIONER_PROV_LINK_OPEN_EVT, bearer PB-ADV[0m
+[0;32mI (77079) EXAMPLE: ESP_BLE_MESH_PROVISIONER_ADD_UNPROV_DEV_COMP_EVT, err_code 0[0m
+[0;32mI (79879) EXAMPLE: node_index 0, primary_addr 0x0005, element_num 1, net_idx 0x000[0m
+[0;32mI (79879) uuid: 32 10 00 00 00 00 00 00 00 00 00 00 00 00 00 00[0m
+[0;32mI (79879) EXAMPLE_NVS: Store, key "vendor_client", length 4[0m
+[0;32mI (79879) EXAMPLE_NVS: Store, data: 05 00 00 00[0m
+[0;32mI (79909) EXAMPLE: ESP_BLE_MESH_PROVISIONER_SET_NODE_NAME_COMP_EVT, err_code 0[0m
+[0;32mI (79909) EXAMPLE: Node 0 name NODE-00[0m
+[0;32mI (80369) EXAMPLE: Config client, err_code 0, event 0, addr 0x0005, opcode 0x8008[0m
+[0;32mI (80369) Composition data: e5 02 00 00 00 00 0a 00 03 00 00 00 01 01 00 00[0m
+[0;32mI (80369) Composition data: e5 02 01 00[0m
+[0;32mI (80379) EXAMPLE: ********************** Composition Data Start **********************[0m
+[0;32mI (80379) EXAMPLE: * CID 0x02e5, PID 0x0000, VID 0x0000, CRPL 0x000a, Features 0x0003 *[0m
+[0;32mI (80389) EXAMPLE: * Loc 0x0000, NumS 0x01, NumV 0x01 *[0m
+[0;32mI (80399) EXAMPLE: * SIG Model ID 0x0000 *[0m
+[0;32mI (80399) EXAMPLE: * Vendor Model ID 0x0001, Company ID 0x02e5 *[0m
+[0;32mI (80409) EXAMPLE: *********************** Composition Data End ***********************[0m
+[0;32mI (80479) EXAMPLE: ESP_BLE_MESH_PROVISIONER_STORE_NODE_COMP_DATA_COMP_EVT, err_code 0[0m
+[0;32mI (80799) EXAMPLE: Config client, err_code 0, event 1, addr 0x0005, opcode 0x0000[0m
+[0;32mI (80919) EXAMPLE: ESP_BLE_MESH_PROVISIONER_PROV_LINK_CLOSE_EVT, bearer PB-ADV, reason 0x00[0m
+[0;32mI (80959) EXAMPLE: Config client, err_code 0, event 1, addr 0x0005, opcode 0x803d[0m
+[0;33mW (80959) EXAMPLE: example_ble_mesh_config_client_cb, Provision and config successfully[0m
+[0;32mI (120139) Device address: 00 4b 12 8f 62 c6[0m
+[0;32mI (120139) EXAMPLE: Address type 0x00, adv type 0x03[0m
+[0;32mI (120139) Device UUID: 32 10 00 00 00 00 00 00 00 00 00 00 00 00 00 00[0m
+[0;32mI (120149) EXAMPLE: oob info 0x0000, bearer PB-ADV[0m
+[0;32mI (120159) EXAMPLE: ESP_BLE_MESH_PROVISIONER_PROV_LINK_OPEN_EVT, bearer PB-ADV[0m
+[0;32mI (120159) EXAMPLE: ESP_BLE_MESH_PROVISIONER_ADD_UNPROV_DEV_COMP_EVT, err_code 0[0m
+[0;32mI (123189) EXAMPLE: node_index 0, primary_addr 0x0005, element_num 1, net_idx 0x000[0m
+[0;32mI (123189) uuid: 32 10 00 00 00 00 00 00 00 00 00 00 00 00 00 00[0m
+[0;32mI (123189) EXAMPLE_NVS: Store, key "vendor_client", length 4[0m
+[0;32mI (123199) EXAMPLE_NVS: Store, data: 05 00 00 00[0m
+[0;32mI (123229) EXAMPLE: ESP_BLE_MESH_PROVISIONER_SET_NODE_NAME_COMP_EVT, err_code 0[0m
+[0;32mI (123229) EXAMPLE: Node 0 name NODE-00[0m
+[0;32mI (123739) EXAMPLE: Config client, err_code 0, event 0, addr 0x0005, opcode 0x8008[0m
+[0;32mI (123739) Composition data: e5 02 00 00 00 00 0a 00 03 00 00 00 01 01 00 00[0m
+[0;32mI (123739) Composition data: e5 02 01 00[0m
+[0;32mI (123739) EXAMPLE: ********************** Composition Data Start **********************[0m
+[0;32mI (123749) EXAMPLE: * CID 0x02e5, PID 0x0000, VID 0x0000, CRPL 0x000a, Features 0x0003 *[0m
+[0;32mI (123759) EXAMPLE: * Loc 0x0000, NumS 0x01, NumV 0x01 *[0m
+[0;32mI (123759) EXAMPLE: * SIG Model ID 0x0000 *[0m
+[0;32mI (123769) EXAMPLE: * Vendor Model ID 0x0001, Company ID 0x02e5 *[0m
+[0;32mI (123769) EXAMPLE: *********************** Composition Data End ***********************[0m
+[0;32mI (123819) EXAMPLE: ESP_BLE_MESH_PROVISIONER_STORE_NODE_COMP_DATA_COMP_EVT, err_code 0[0m
+[0;33mW (124079) BLE_MESH: Replay: src 0x0005 dst 0x0001 seq 0x000003[0m
+[0;33mW (124199) BLE_MESH: Replay: src 0x0005 dst 0x0001 seq 0x000004[0m
+[0;32mI (124319) EXAMPLE: ESP_BLE_MESH_PROVISIONER_PROV_LINK_CLOSE_EVT, bearer PB-ADV, reason 0x00[0m
+[0;33mW (127929) BLE_MESH: Receive configuration status message timeout[0m
+[0;32mI (127929) EXAMPLE: Config client, err_code 0, event 3, addr 0x0005, opcode 0x0000[0m
+[0;33mW (128099) BLE_MESH: Replay: src 0x0005 dst 0x0001 seq 0x000005[0m
+[0;33mW (131959) BLE_MESH: Receive configuration status message timeout[0m
+[0;32mI (131959) EXAMPLE: Config client, err_code 0, event 3, addr 0x0005, opcode 0x0000[0m
+[0;33mW (135989) BLE_MESH: Receive configuration status message timeout[0m
+[0;32mI (135989) EXAMPLE: Config client, err_code 0, event 3, addr 0x0005, opcode 0x0000[0m
+[0;32mI (136329) EXAMPLE: Config client, err_code 0, event 1, addr 0x0005, opcode 0x0000[0m
+[0;32mI (136439) EXAMPLE: Config client, err_code 0, event 1, addr 0x0005, opcode 0x803d[0m
+[0;33mW (136439) EXAMPLE: example_ble_mesh_config_client_cb, Provision and config successfully[0m
+ets Jul 29 2019 12:21:46
+
+rst:0x1 (POWERON_RESET),boot:0x13 (SPI_FAST_FLASH_BOOT)
+configsip: 0, SPIWP:0xee
+clk_drv:0x00,q_drv:0x00,d_drv:0x00,cs0_drv:0x00,hd_drv:0x00,wp_drv:0x00
+mode:DIO, clock div:2
+load:0x3fff0030,len:6276
+load:0x40078000,len:15736
+load:0x40080400,len:4
+load:0x40080404,len:3860
+entry 0x4008063c
+[0;32mI (29) boot: ESP-IDF v5.4.2 2nd stage bootloader[0m
+[0;32mI (29) boot: compile time Oct 16 2025 10:02:34[0m
+[0;32mI (30) boot: Multicore bootloader[0m
+[0;32mI (31) boot: chip revision: v3.1[0m
+[0;32mI (34) boot.esp32: SPI Speed      : 40MHz[0m
+[0;32mI (37) boot.esp32: SPI Mode       : DIO[0m
+[0;32mI (41) boot.esp32: SPI Flash Size : 2MB[0m
+[0;32mI (44) boot: Enabling RNG early entropy source...[0m
+[0;32mI (49) boot: Partition Table:[0m
+[0;32mI (51) boot: ## Label            Usage          Type ST Offset   Length[0m
+[0;32mI (58) boot:  0 nvs              WiFi data        01 02 00009000 00006000[0m
+[0;32mI (64) boot:  1 phy_init         RF data          01 01 0000f000 00001000[0m
+[0;32mI (71) boot:  2 factory          factory app      00 00 00010000 00177000[0m
+[0;32mI (77) boot: End of partition table[0m
+[0;32mI (81) esp_image: segment 0: paddr=00010020 vaddr=3f400020 size=3c1e0h (246240) map[0m
+[0;32mI (172) esp_image: segment 1: paddr=0004c208 vaddr=3ff80000 size=0001ch (    28) load[0m
+[0;32mI (173) esp_image: segment 2: paddr=0004c22c vaddr=3ffbdb60 size=03dech ( 15852) load[0m
+[0;32mI (182) esp_image: segment 3: paddr=00050020 vaddr=400d0020 size=10f020h (1110048) map[0m
+[0;32mI (563) esp_image: segment 4: paddr=0015f048 vaddr=3ffc194c size=0231ch (  8988) load[0m
+[0;32mI (567) esp_image: segment 5: paddr=0016136c vaddr=40080000 size=1ec20h (125984) load[0m
+[0;32mI (631) boot: Loaded app from partition at offset 0x10000[0m
+[0;32mI (631) boot: Disabling RNG early entropy source...[0m
+[0;32mI (641) cpu_start: Multicore app[0m
+[0;32mI (650) cpu_start: Pro cpu start user code[0m
+[0;32mI (650) cpu_start: cpu freq: 160000000 Hz[0m
+[0;32mI (650) app_init: Application information:[0m
+[0;32mI (650) app_init: Project name:     Gateway[0m
+[0;32mI (654) app_init: App version:      1[0m
+[0;32mI (657) app_init: Compile time:     Oct 20 2025 15:58:03[0m
+[0;32mI (662) app_init: ELF file SHA256:  b9673466a...[0m
+[0;32mI (667) app_init: ESP-IDF:          v5.4.2[0m
+[0;32mI (670) efuse_init: Min chip rev:     v0.0[0m
+[0;32mI (674) efuse_init: Max chip rev:     v3.99 [0m
+[0;32mI (678) efuse_init: Chip rev:         v3.1[0m
+[0;32mI (682) heap_init: Initializing. RAM available for dynamic allocation:[0m
+[0;32mI (689) heap_init: At 3FFAFF10 len 000000F0 (0 KiB): DRAM[0m
+[0;32mI (693) heap_init: At 3FFB6388 len 00001C78 (7 KiB): DRAM[0m
+[0;32mI (699) heap_init: At 3FFB9A20 len 00004108 (16 KiB): DRAM[0m
+[0;32mI (704) heap_init: At 3FFCF850 len 000107B0 (65 KiB): DRAM[0m
+[0;32mI (709) heap_init: At 3FFE0440 len 00003AE0 (14 KiB): D/IRAM[0m
+[0;32mI (714) heap_init: At 3FFE4350 len 0001BCB0 (111 KiB): D/IRAM[0m
+[0;32mI (720) heap_init: At 4009EC20 len 000013E0 (4 KiB): IRAM[0m
+[0;32mI (727) spi_flash: detected chip: generic[0m
+[0;32mI (729) spi_flash: flash io: dio[0m
+[0;33mW (732) spi_flash: Detected size(4096k) larger than the size in the binary image header(2048k). Using the size in the binary image header.[0m
+[0;32mI (745) coexist: coex firmware version: 7b9a184[0m
+[0;32mI (749) main_task: Started on CPU0[0m
+[0;32mI (759) main_task: Calling app_main()[0m
+[0;32mI (759) EXAMPLE: Initializing...[0m
+[0;32mI (809) BTDM_INIT: BT controller compile version [b992c7d][0m
+[0;32mI (809) BTDM_INIT: Bluetooth MAC: 3c:8a:1f:0c:d8:ae[0m
+[0;32mI (809) phy_init: phy_version 4860,6b7a6e5,Feb  6 2025,14:47:07[0m
+[0;32mI (899) phy_init: Saving new calibration data due to checksum failure or outdated calibration data, mode(0)[0m
+[0;32mI (1209) wifi:wifi driver task: 3ffda6fc, prio:23, stack:6656, core=0[0m
+[0;32mI (1219) wifi:wifi firmware version: bea31f3[0m
+[0;32mI (1229) wifi:wifi certification version: v7.0[0m
+[0;32mI (1229) wifi:config NVS flash: enabled[0m
+[0;32mI (1229) wifi:config nano formatting: disabled[0m
+[0;32mI (1229) wifi:Init data frame dynamic rx buffer num: 32[0m
+[0;32mI (1239) wifi:Init static rx mgmt buffer num: 5[0m
+[0;32mI (1239) wifi:Init management short buffer num: 32[0m
+[0;32mI (1239) wifi:Init dynamic tx buffer num: 32[0m
+[0;32mI (1249) wifi:Init static rx buffer size: 1600[0m
+[0;32mI (1249) wifi:Init static rx buffer num: 10[0m
+[0;32mI (1259) wifi:Init dynamic rx buffer num: 32[0m
+[0;32mI (1259) wifi_init: rx ba win: 6[0m
+[0;32mI (1259) wifi_init: accept mbox: 6[0m
+[0;32mI (1269) wifi_init: tcpip mbox: 32[0m
+[0;32mI (1269) wifi_init: udp mbox: 6[0m
+[0;32mI (1269) wifi_init: tcp mbox: 6[0m
+[0;32mI (1269) wifi_init: tcp tx win: 5760[0m
+[0;32mI (1279) wifi_init: tcp rx win: 5760[0m
+[0;32mI (1279) wifi_init: tcp mss: 1440[0m
+[0;32mI (1279) wifi_init: WiFi IRAM OP enabled[0m
+[0;32mI (1289) wifi_init: WiFi RX IRAM OP enabled[0m
+[0;33mW (1289) wifi:Password length matches WPA2 standards, authmode threshold changes from OPEN to WPA2[0m
+[0;32mI (1299) wifi:mode : sta (3c:8a:1f:0c:d8:ac)[0m
+[0;32mI (1299) wifi:enable tsf[0m
+[0;32mI (1309) wifi station: wifi_init_sta finished.[0m
+[0;32mI (1319) wifi:new:<2,0>, old:<1,0>, ap:<255,255>, sta:<2,0>, prof:1, snd_ch_cfg:0x0[0m
+[0;32mI (1319) wifi:state: init -> auth (0xb0)[0m
+[0;32mI (1329) wifi:state: auth -> init (0x1c0)[0m
+[0;32mI (1339) wifi:new:<2,0>, old:<2,0>, ap:<255,255>, sta:<2,0>, prof:1, snd_ch_cfg:0x0[0m
+[0;32mI (1339) wifi station: retry to connect to the AP[0m
+[0;32mI (1339) wifi station: connect to the AP fail[0m
+[0;32mI (3749) wifi station: retry to connect to the AP[0m
+[0;32mI (3749) wifi station: connect to the AP fail[0m
+[0;32mI (3799) wifi:new:<2,0>, old:<2,0>, ap:<255,255>, sta:<2,0>, prof:1, snd_ch_cfg:0x0[0m
+[0;32mI (3799) wifi:state: init -> auth (0xb0)[0m
+[0;32mI (3829) wifi:state: auth -> assoc (0x0)[0m
+[0;32mI (3839) wifi:state: assoc -> run (0x10)[0m
+[0;32mI (3859) wifi:connected with BaoNguyen, aid = 4, channel 2, BW20, bssid = 66:66:10:be:90:b1[0m
+[0;32mI (3859) wifi:security: WPA2-PSK, phy: bgn, rssi: -64[0m
+[0;32mI (3869) wifi:pm start, type: 1[0m
+
+[0;32mI (3869) wifi:dp: 1, bi: 102400, li: 3, scale listen interval from 307200 us to 307200 us[0m
+[0;32mI (3899) wifi:dp: 2, bi: 102400, li: 4, scale listen interval from 307200 us to 409600 us[0m
+[0;32mI (3899) wifi:AP's beacon interval = 102400 us, DTIM period = 2[0m
+[0;32mI (4909) esp_netif_handlers: sta ip: 10.209.139.117, mask: 255.255.255.0, gw: 10.209.139.103[0m
+[0;32mI (4909) wifi station: got ip:10.209.139.117[0m
+[0;32mI (4909) wifi station: connected to ap SSID:BaoNguyen password:30032004[0m
+[0;32mI (4909) mqtts_example: [APP] Free memory: 120932 bytes[0m
+[0;32mI (4919) mqtts_example: Other event id:7[0m
+[0;32mI (4929) EXAMPLE_NVS: Open namespace done, name "mesh_example"[0m
+[0;32mI (5039) EXAMPLE: ESP_BLE_MESH_PROV_REGISTER_COMP_EVT, err_code 0[0m
+[0;32mI (5039) EXAMPLE_NVS: Restore, key "vendor_client", length 4[0m
+[0;32mI (5039) EXAMPLE_NVS: Restore, data: 05 00 00 00[0m
+[0;32mI (5039) EXAMPLE: Restore, server_addr 0x0005, vnd_tid 0x0000[0m
+[0;32mI (5049) EXAMPLE: ESP_BLE_MESH_PROVISIONER_SET_DEV_UUID_MATCH_COMP_EVT, err_code 0[0m
+[0;32mI (5059) EXAMPLE: ESP_BLE_MESH_PROVISIONER_PROV_ENABLE_COMP_EVT, err_code 0[0m
+[0;33mW (5069) BLE_MESH: AppKey exists, AppKeyIndex updated[0m
+[0;32mI (5069) EXAMPLE: ESP_BLE_MESH_PROVISIONER_ADD_LOCAL_APP_KEY_COMP_EVT, err_code 0[0m
+[0;32mI (5079) EXAMPLE: ESP_BLE_MESH_PROVISIONER_BIND_APP_KEY_TO_MODEL_COMP_EVT, err_code 0[0m
+[0;32mI (5079) EXAMPLE: ESP BLE Mesh Provisioner initialized (UUID filter on)[0m
+[0;32mI (5089) main_task: Returned from app_main()[0m
+[0;32mI (5539) wifi:<ba-add>idx:0 (ifx:0, 66:66:10:be:90:b1), tid:0, ssn:3, winSize:64[0m
+[0;32mI (6159) mqtts_example: MQTT_EVENT_CONNECTED[0m
+[0;32mI (6159) mqtts_example: sent subscribe successful, msg_id=16950[0m
+[0;32mI (6459) mqtts_example: MQTT_EVENT_SUBSCRIBED, msg_id=16950[0m
+[0;32mI (13819) Device address: cc 50 e3 a3 b8 4e[0m
+[0;32mI (13819) EXAMPLE: Address type 0x00, adv type 0x03[0m
+[0;32mI (13819) Device UUID: 32 10 00 00 00 00 00 00 00 00 00 00 00 00 00 00[0m
+[0;32mI (13819) EXAMPLE: oob info 0x0000, bearer PB-ADV[0m
+[0;32mI (13839) EXAMPLE: ESP_BLE_MESH_PROVISIONER_PROV_LINK_OPEN_EVT, bearer PB-ADV[0m
+[0;32mI (13839) EXAMPLE: ESP_BLE_MESH_PROVISIONER_ADD_UNPROV_DEV_COMP_EVT, err_code 0[0m
+[0;32mI (16149) EXAMPLE: node_index 0, primary_addr 0x0005, element_num 1, net_idx 0x000[0m
+[0;32mI (16149) uuid: 32 10 00 00 00 00 00 00 00 00 00 00 00 00 00 00[0m
+[0;32mI (16149) EXAMPLE_NVS: Store, key "vendor_client", length 4[0m
+[0;32mI (16159) EXAMPLE_NVS: Store, data: 05 00 00 00[0m
+[0;32mI (16229) EXAMPLE: ESP_BLE_MESH_PROVISIONER_SET_NODE_NAME_COMP_EVT, err_code 0[0m
+[0;32mI (16229) EXAMPLE: Node 0 name NODE-00[0m
+[0;32mI (16679) EXAMPLE: Config client, err_code 0, event 0, addr 0x0005, opcode 0x8008[0m
+[0;32mI (16679) Composition data: e5 02 00 00 00 00 0a 00 03 00 00 00 01 01 00 00[0m
+[0;32mI (16679) Composition data: e5 02 01 00[0m
+[0;32mI (16679) EXAMPLE: ********************** Composition Data Start **********************[0m
+[0;32mI (16689) EXAMPLE: * CID 0x02e5, PID 0x0000, VID 0x0000, CRPL 0x000a, Features 0x0003 *[0m
+[0;32mI (16699) EXAMPLE: * Loc 0x0000, NumS 0x01, NumV 0x01 *[0m
+[0;32mI (16699) EXAMPLE: * SIG Model ID 0x0000 *[0m
+[0;32mI (16709) EXAMPLE: * Vendor Model ID 0x0001, Company ID 0x02e5 *[0m
+[0;32mI (16709) EXAMPLE: *********************** Composition Data End ***********************[0m
+[0;32mI (16769) EXAMPLE: ESP_BLE_MESH_PROVISIONER_STORE_NODE_COMP_DATA_COMP_EVT, err_code 0[0m
+[0;33mW (17099) BLE_MESH: Replay: src 0x0005 dst 0x0001 seq 0x000004[0m
+[0;32mI (17219) EXAMPLE: ESP_BLE_MESH_PROVISIONER_PROV_LINK_CLOSE_EVT, bearer PB-ADV, reason 0x00[0m
+[0;33mW (20849) BLE_MESH: Receive configuration status message timeout[0m
+[0;32mI (20859) EXAMPLE: Config client, err_code 0, event 3, addr 0x0005, opcode 0x0000[0m
+[0;33mW (21029) BLE_MESH: Replay: src 0x0005 dst 0x0001 seq 0x000005[0m
+[0;33mW (21099) BLE_MESH: Replay: src 0x0005 dst 0x0001 seq 0x000006[0m
+[0;33mW (24889) BLE_MESH: Receive configuration status message timeout[0m
+[0;32mI (24889) EXAMPLE: Config client, err_code 0, event 3, addr 0x0005, opcode 0x0000[0m
+[0;33mW (25019) BLE_MESH: Replay: src 0x0005 dst 0x0001 seq 0x000007[0m
+[0;33mW (25129) BLE_MESH: Replay: src 0x0005 dst 0x0001 seq 0x000008[0m
+[0;33mW (28909) BLE_MESH: Receive configuration status message timeout[0m
+[0;32mI (28919) EXAMPLE: Config client, err_code 0, event 3, addr 0x0005, opcode 0x0000[0m
+[0;33mW (29089) BLE_MESH: Replay: src 0x0005 dst 0x0001 seq 0x000009[0m
+[0;33mW (29169) BLE_MESH: Replay: src 0x0005 dst 0x0001 seq 0x00000a[0m
+[0;33mW (32949) BLE_MESH: Receive configuration status message timeout[0m
+[0;32mI (32949) EXAMPLE: Config client, err_code 0, event 3, addr 0x0005, opcode 0x0000[0m
+[0;33mW (33099) BLE_MESH: Replay: src 0x0005 dst 0x0001 seq 0x00000b[0m
+[0;33mW (33219) BLE_MESH: Replay: src 0x0005 dst 0x0001 seq 0x00000c[0m
+[0;33mW (36979) BLE_MESH: Receive configuration status message timeout[0m
+[0;32mI (36979) EXAMPLE: Config client, err_code 0, event 3, addr 0x0005, opcode 0x0000[0m
+[0;33mW (37119) BLE_MESH: Replay: src 0x0005 dst 0x0001 seq 0x00000d[0m
+[0;33mW (40999) BLE_MESH: Receive configuration status message timeout[0m
+[0;32mI (41009) EXAMPLE: Config client, err_code 0, event 3, addr 0x0005, opcode 0x0000[0m
+[0;33mW (45039) BLE_MESH: Receive configuration status message timeout[0m
+[0;32mI (45039) EXAMPLE: Config client, err_code 0, event 3, addr 0x0005, opcode 0x0000[0m
+[0;33mW (49069) BLE_MESH: Receive configuration status message timeout[0m
+[0;32mI (49069) EXAMPLE: Config client, err_code 0, event 3, addr 0x0005, opcode 0x0000[0m
+[0;33mW (53099) BLE_MESH: Receive configuration status message timeout[0m
+[0;32mI (53099) EXAMPLE: Config client, err_code 0, event 3, addr 0x0005, opcode 0x0000[0m
+[0;32mI (53359) EXAMPLE: Config client, err_code 0, event 1, addr 0x0005, opcode 0x0000[0m
+[0;32mI (53469) EXAMPLE: Config client, err_code 0, event 1, addr 0x0005, opcode 0x803d[0m
+[0;33mW (53469) EXAMPLE: example_ble_mesh_config_client_cb, Provision and config successfully[0m
+����������������������������������������������������������������ts Jul 29 2019 12:21:46
+
+rst:0x1 (POWERON_RESET),boot:0x13 (SPI_FAST_FLASH_BOOT)
+configsip: 0, SPIWP:0xee
+clk_drv:0x00,q_drv:0x00,d_drv:0x00,cs0_drv:0x00,hd_drv:0x00,wp_drv:0x00
+mode:DIO, clock div:2
+load:0x3fff0030,len:6276
+load:0x40078000,len:15736
+load:0x40080400,len:4
+load:0x40080404,len:3860
+entry 0x4008063c
+[0;32mI (29) boot: ESP-IDF v5.4.2 2nd stage bootloader[0m
+[0;32mI (29) boot: compile time Oct 16 2025 10:02:34[0m
+[0;32mI (29) boot: Multicore bootloader[0m
+[0;32mI (31) boot: chip revision: v3.1[0m
+[0;32mI (34) boot.esp32: SPI Speed      : 40MHz[0m
+[0;32mI (37) boot.esp32: SPI Mode       : DIO[0m
+[0;32mI (41) boot.esp32: SPI Flash Size : 2MB[0m
+[0;32mI (44) boot: Enabling RNG early entropy source...[0m
+[0;32mI (49) boot: Partition Table:[0m
+[0;32mI (51) boot: ## Label            Usage          Type ST Offset   Length[0m
+[0;32mI (58) boot:  0 nvs              WiFi data        01 02 00009000 00006000[0m
+[0;32mI (64) boot:  1 phy_init         RF data          01 01 0000f000 00001000[0m
+[0;32mI (71) boot:  2 factory          factory app      00 00 00010000 00177000[0m
+[0;32mI (77) boot: End of partition table[0m
+[0;32mI (81) esp_image: segment 0: paddr=00010020 vaddr=3f400020 size=3c1e0h (246240) map[0m
+[0;32mI (172) esp_image: segment 1: paddr=0004c208 vaddr=3ff80000 size=0001ch (    28) load[0m
+[0;32mI (173) esp_image: segment 2: paddr=0004c22c vaddr=3ffbdb60 size=03dech ( 15852) load[0m
+[0;32mI (182) esp_image: segment 3: paddr=00050020 vaddr=400d0020 size=10f020h (1110048) map[0m
+[0;32mI (563) esp_image: segment 4: paddr=0015f048 vaddr=3ffc194c size=0231ch (  8988) load[0m
+[0;32mI (567) esp_image: segment 5: paddr=0016136c vaddr=40080000 size=1ec20h (125984) load[0m
+[0;32mI (631) boot: Loaded app from partition at offset 0x10000[0m
+[0;32mI (631) boot: Disabling RNG early entropy source...[0m
+[0;32mI (641) cpu_start: Multicore app[0m
+[0;32mI (650) cpu_start: Pro cpu start user code[0m
+[0;32mI (650) cpu_start: cpu freq: 160000000 Hz[0m
+[0;32mI (650) app_init: Application information:[0m
+[0;32mI (650) app_init: Project name:     Gateway[0m
+[0;32mI (654) app_init: App version:      1[0m
+[0;32mI (657) app_init: Compile time:     Oct 20 2025 15:58:03[0m
+[0;32mI (662) app_init: ELF file SHA256:  b9673466a...[0m
+[0;32mI (667) app_init: ESP-IDF:          v5.4.2[0m
+[0;32mI (670) efuse_init: Min chip rev:     v0.0[0m
+[0;32mI (674) efuse_init: Max chip rev:     v3.99 [0m
+[0;32mI (678) efuse_init: Chip rev:         v3.1[0m
+[0;32mI (682) heap_init: Initializing. RAM available for dynamic allocation:[0m
+[0;32mI (689) heap_init: At 3FFAFF10 len 000000F0 (0 KiB): DRAM[0m
+[0;32mI (693) heap_init: At 3FFB6388 len 00001C78 (7 KiB): DRAM[0m
+[0;32mI (699) heap_init: At 3FFB9A20 len 00004108 (16 KiB): DRAM[0m
+[0;32mI (704) heap_init: At 3FFCF850 len 000107B0 (65 KiB): DRAM[0m
+[0;32mI (709) heap_init: At 3FFE0440 len 00003AE0 (14 KiB): D/IRAM[0m
+[0;32mI (714) heap_init: At 3FFE4350 len 0001BCB0 (111 KiB): D/IRAM[0m
+[0;32mI (720) heap_init: At 4009EC20 len 000013E0 (4 KiB): IRAM[0m
+[0;32mI (727) spi_flash: detected chip: generic[0m
+[0;32mI (729) spi_flash: flash io: dio[0m
+[0;33mW (732) spi_flash: Detected size(4096k) larger than the size in the binary image header(2048k). Using the size in the binary image header.[0m
+[0;32mI (745) coexist: coex firmware version: 7b9a184[0m
+[0;32mI (749) main_task: Started on CPU0[0m
+[0;32mI (759) main_task: Calling app_main()[0m
+[0;32mI (759) EXAMPLE: Initializing...[0m
+[0;32mI (809) BTDM_INIT: BT controller compile version [b992c7d][0m
+[0;32mI (809) BTDM_INIT: Bluetooth MAC: 3c:8a:1f:0c:d8:ae[0m
+[0;32mI (819) phy_init: phy_version 4860,6b7a6e5,Feb  6 2025,14:47:07[0m
+[0;32mI (899) phy_init: Saving new calibration data due to checksum failure or outdated calibration data, mode(0)[0m
+[0;32mI (1209) wifi:wifi driver task: 3ffda678, prio:23, stack:6656, core=0[0m
+[0;32mI (1229) wifi:wifi firmware version: bea31f3[0m
+[0;32mI (1229) wifi:wifi certification version: v7.0[0m
+[0;32mI (1229) wifi:config NVS flash: enabled[0m
+[0;32mI (1229) wifi:config nano formatting: disabled[0m
+[0;32mI (1229) wifi:Init data frame dynamic rx buffer num: 32[0m
+[0;32mI (1239) wifi:Init static rx mgmt buffer num: 5[0m
+[0;32mI (1239) wifi:Init management short buffer num: 32[0m
+[0;32mI (1239) wifi:Init dynamic tx buffer num: 32[0m
+[0;32mI (1249) wifi:Init static rx buffer size: 1600[0m
+[0;32mI (1249) wifi:Init static rx buffer num: 10[0m
+[0;32mI (1259) wifi:Init dynamic rx buffer num: 32[0m
+[0;32mI (1259) wifi_init: rx ba win: 6[0m
+[0;32mI (1259) wifi_init: accept mbox: 6[0m
+[0;32mI (1269) wifi_init: tcpip mbox: 32[0m
+[0;32mI (1269) wifi_init: udp mbox: 6[0m
+[0;32mI (1269) wifi_init: tcp mbox: 6[0m
+[0;32mI (1269) wifi_init: tcp tx win: 5760[0m
+[0;32mI (1279) wifi_init: tcp rx win: 5760[0m
+[0;32mI (1279) wifi_init: tcp mss: 1440[0m
+[0;32mI (1279) wifi_init: WiFi IRAM OP enabled[0m
+[0;32mI (1289) wifi_init: WiFi RX IRAM OP enabled[0m
+[0;33mW (1289) wifi:Password length matches WPA2 standards, authmode threshold changes from OPEN to WPA2[0m
+[0;32mI (1299) wifi:mode : sta (3c:8a:1f:0c:d8:ac)[0m
+[0;32mI (1309) wifi:enable tsf[0m
+[0;32mI (1309) wifi station: wifi_init_sta finished.[0m
+[0;32mI (1329) wifi:new:<2,0>, old:<1,0>, ap:<255,255>, sta:<2,0>, prof:1, snd_ch_cfg:0x0[0m
+[0;32mI (1329) wifi:state: init -> auth (0xb0)[0m
+[0;32mI (1339) wifi:state: auth -> assoc (0x0)[0m
+[0;32mI (1359) wifi:state: assoc -> run (0x10)[0m
+[0;32mI (1369) wifi:connected with BaoNguyen, aid = 5, channel 2, BW20, bssid = 66:66:10:be:90:b1[0m
+[0;32mI (1369) wifi:security: WPA2-PSK, phy: bgn, rssi: -59[0m
+[0;32mI (1379) wifi:pm start, type: 1[0m
+
+[0;32mI (1379) wifi:dp: 1, bi: 102400, li: 3, scale listen interval from 307200 us to 307200 us[0m
+[0;32mI (1429) wifi:dp: 2, bi: 102400, li: 4, scale listen interval from 307200 us to 409600 us[0m
+[0;32mI (1429) wifi:AP's beacon interval = 102400 us, DTIM period = 2[0m
+[0;32mI (2409) esp_netif_handlers: sta ip: 10.209.139.117, mask: 255.255.255.0, gw: 10.209.139.103[0m
+[0;32mI (2409) wifi station: got ip:10.209.139.117[0m
+[0;32mI (2409) wifi station: connected to ap SSID:BaoNguyen password:30032004[0m
+[0;32mI (2409) mqtts_example: [APP] Free memory: 121072 bytes[0m
+[0;32mI (2419) mqtts_example: Other event id:7[0m
+[0;32mI (2429) EXAMPLE_NVS: Open namespace done, name "mesh_example"[0m
+[0;32mI (2539) EXAMPLE: ESP_BLE_MESH_PROV_REGISTER_COMP_EVT, err_code 0[0m
+[0;32mI (2539) EXAMPLE_NVS: Restore, key "vendor_client", length 4[0m
+[0;32mI (2539) EXAMPLE_NVS: Restore, data: 05 00 00 00[0m
+[0;32mI (2539) EXAMPLE: Restore, server_addr 0x0005, vnd_tid 0x0000[0m
+[0;32mI (2549) EXAMPLE: ESP_BLE_MESH_PROVISIONER_SET_DEV_UUID_MATCH_COMP_EVT, err_code 0[0m
+[0;32mI (2559) EXAMPLE: ESP_BLE_MESH_PROVISIONER_PROV_ENABLE_COMP_EVT, err_code 0[0m
+[0;33mW (2569) BLE_MESH: AppKey exists, AppKeyIndex updated[0m
+[0;32mI (2569) EXAMPLE: ESP_BLE_MESH_PROVISIONER_ADD_LOCAL_APP_KEY_COMP_EVT, err_code 0[0m
+[0;32mI (2579) EXAMPLE: ESP_BLE_MESH_PROVISIONER_BIND_APP_KEY_TO_MODEL_COMP_EVT, err_code 0[0m
+[0;32mI (2579) Device address: 00 4b 12 8f 62 c6[0m
+[0;32mI (2589) EXAMPLE: Address type 0x00, adv type 0x00[0m
+[0;32mI (2589) Device UUID: 32 10 aa 01 02 00 00 00 00 00 00 00 00 00 00 00[0m
+[0;32mI (2599) EXAMPLE: oob info 0x0000, bearer PB-GATT[0m
+[0;32mI (2609) EXAMPLE: ESP_BLE_MESH_PROVISIONER_ADD_UNPROV_DEV_COMP_EVT, err_code 0[0m
+[0;32mI (2609) EXAMPLE: ESP BLE Mesh Provisioner initialized (UUID filter on)[0m
+[0;32mI (2619) main_task: Returned from app_main()[0m
+[0;32mI (2669) wifi:<ba-add>idx:0 (ifx:0, 66:66:10:be:90:b1), tid:0, ssn:3, winSize:64[0m
+[0;32mI (3259) Device address: cc 50 e3 a3 b8 4e[0m
+[0;32mI (3259) EXAMPLE: Address type 0x00, adv type 0x03[0m
+[0;32mI (3259) Device UUID: 32 10 00 00 00 00 00 00 00 00 00 00 00 00 00 00[0m
+[0;32mI (3259) EXAMPLE: oob info 0x0000, bearer PB-ADV[0m
+[0;32mI (3279) EXAMPLE: ESP_BLE_MESH_PROVISIONER_PROV_LINK_OPEN_EVT, bearer PB-ADV[0m
+[0;32mI (3289) EXAMPLE: ESP_BLE_MESH_PROVISIONER_ADD_UNPROV_DEV_COMP_EVT, err_code 0[0m
+[0;32mI (3969) EXAMPLE: ESP_BLE_MESH_PROVISIONER_PROV_LINK_OPEN_EVT, bearer PB-GATT[0m
+[0;33mW (4689) BT_HCI: hci cmd send: disconnect: hdl 0x0, rsn:0x13[0m
+[0;33mW (4689) BT_APPL: gattc_conn_cb: if=3 st=0 id=3 rsn=0x16[0m
+[0;32mI (4689) EXAMPLE: node_index 1, primary_addr 0x0006, element_num 1, net_idx 0x000[0m
+[0;32mI (4689) uuid: 32 10 aa 01 02 00 00 00 00 00 00 00 00 00 00 00[0m
+[0;33mW (4719) BT_HCI: hcif disc complete: hdl 0x0, rsn 0x16 dev_find 1[0m
+[0;32mI (4729) EXAMPLE_NVS: Store, key "vendor_client", length 4[0m
+[0;32mI (4729) EXAMPLE_NVS: Store, data: 06 00 00 00[0m
+[0;32mI (4729) EXAMPLE: ESP_BLE_MESH_PROVISIONER_PROV_LINK_CLOSE_EVT, bearer PB-GATT, reason 0x16[0m
+[0;32mI (4759) EXAMPLE: ESP_BLE_MESH_PROVISIONER_SET_NODE_NAME_COMP_EVT, err_code 0[0m
+[0;32mI (4759) EXAMPLE: Node 1 name NODE-01[0m
+[0;32mI (5029) EXAMPLE: Config client, err_code 0, event 0, addr 0x0006, opcode 0x8008[0m
+[0;32mI (5029) Composition data: e5 02 00 00 00 00 0a 00 03 00 00 00 01 01 00 00[0m
+[0;32mI (5029) Composition data: e5 02 01 00[0m
+[0;32mI (5039) EXAMPLE: ********************** Composition Data Start **********************[0m
+[0;32mI (5039) EXAMPLE: * CID 0x02e5, PID 0x0000, VID 0x0000, CRPL 0x000a, Features 0x0003 *[0m
+[0;32mI (5049) EXAMPLE: * Loc 0x0000, NumS 0x01, NumV 0x01 *[0m
+[0;32mI (5059) EXAMPLE: * SIG Model ID 0x0000 *[0m
+[0;32mI (5059) EXAMPLE: * Vendor Model ID 0x0001, Company ID 0x02e5 *[0m
+[0;32mI (5059) EXAMPLE: *********************** Composition Data End ***********************[0m
+[0;32mI (5119) EXAMPLE: ESP_BLE_MESH_PROVISIONER_STORE_NODE_COMP_DATA_COMP_EVT, err_code 0[0m
+[0;32mI (5569) EXAMPLE: Config client, err_code 0, event 1, addr 0x0006, opcode 0x0000[0m
+[0;32mI (5739) EXAMPLE: Config client, err_code 0, event 1, addr 0x0006, opcode 0x803d[0m
+[0;33mW (5739) EXAMPLE: example_ble_mesh_config_client_cb, Provision and config successfully[0m
+[0;33mW (6729) BLE_MESH: Data for unknown transaction (130 != 0)[0m
+[0;33mW (6749) BLE_MESH: Data for unknown transaction (130 != 0)[0m
+[0;33mW (6779) BLE_MESH: Data for unknown transaction (130 != 0)[0m
+[0;33mW (6799) BLE_MESH: Data for unknown transaction (130 != 0)[0m
+[0;32mI (8199) mqtts_example: MQTT_EVENT_CONNECTED[0m
+[0;32mI (8199) mqtts_example: sent subscribe successful, msg_id=45245[0m
+[0;32mI (8509) mqtts_example: MQTT_EVENT_SUBSCRIBED, msg_id=45245[0m
+[0;32mI (9029) EXAMPLE: node_index 0, primary_addr 0x0005, element_num 1, net_idx 0x000[0m
+[0;32mI (9029) uuid: 32 10 00 00 00 00 00 00 00 00 00 00 00 00 00 00[0m
+[0;32mI (9049) EXAMPLE_NVS: Store, key "vendor_client", length 4[0m
+[0;32mI (9049) EXAMPLE_NVS: Store, data: 05 00 00 00[0m
+[0;32mI (9069) EXAMPLE: ESP_BLE_MESH_PROVISIONER_SET_NODE_NAME_COMP_EVT, err_code 0[0m
+[0;32mI (9069) EXAMPLE: Node 0 name NODE-00[0m
+[0;32mI (9509) EXAMPLE: Config client, err_code 0, event 0, addr 0x0005, opcode 0x8008[0m
+[0;32mI (9509) Composition data: e5 02 00 00 00 00 0a 00 03 00 00 00 01 01 00 00[0m
+[0;32mI (9509) Composition data: e5 02 01 00[0m
+[0;32mI (9509) EXAMPLE: ********************** Composition Data Start **********************[0m
+[0;32mI (9519) EXAMPLE: * CID 0x02e5, PID 0x0000, VID 0x0000, CRPL 0x000a, Features 0x0003 *[0m
+[0;32mI (9529) EXAMPLE: * Loc 0x0000, NumS 0x01, NumV 0x01 *[0m
+[0;32mI (9529) EXAMPLE: * SIG Model ID 0x0000 *[0m
+[0;32mI (9539) EXAMPLE: * Vendor Model ID 0x0001, Company ID 0x02e5 *[0m
+[0;32mI (9539) EXAMPLE: *********************** Composition Data End ***********************[0m
+[0;32mI (9589) EXAMPLE: ESP_BLE_MESH_PROVISIONER_STORE_NODE_COMP_DATA_COMP_EVT, err_code 0[0m
+[0;32mI (9919) EXAMPLE: Config client, err_code 0, event 1, addr 0x0005, opcode 0x0000[0m
+[0;32mI (10009) EXAMPLE: Config client, err_code 0, event 1, addr 0x0005, opcode 0x803d[0m
+[0;33mW (10009) EXAMPLE: example_ble_mesh_config_client_cb, Provision and config successfully[0m
+[0;32mI (10059) EXAMPLE: ESP_BLE_MESH_PROVISIONER_PROV_LINK_CLOSE_EVT, bearer PB-ADV, reason 0x00[0m
+ets Jul 29 2019 12:21:46
+
+rst:0x1 (POWERON_RESET),boot:0x13 (SPI_FAST_FLASH_BOOT)
+configsip: 0, SPIWP:0xee
+clk_drv:0x00,q_drv:0x00,d_drv:0x00,cs0_drv:0x00,hd_drv:0x00,wp_drv:0x00
+mode:DIO, clock div:2
+load:0x3fff0030,len:6276
+load:0x40078000,len:15736
+load:0x40080400,len:4
+load:0x40080404,len:3860
+entry 0x4008063c
+[0;32mI (29) boot: ESP-IDF v5.4.2 2nd stage bootloader[0m
+[0;32mI (29) boot: compile time Oct 16 2025 10:02:34[0m
+[0;32mI (29) boot: Multicore bootloader[0m

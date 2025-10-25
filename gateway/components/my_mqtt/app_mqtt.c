@@ -72,29 +72,62 @@ static void mqtt_event_handler(void *handler_args, esp_event_base_t base, int32_
     case MQTT_EVENT_PUBLISHED:
         ESP_LOGI(TAG, "MQTT_EVENT_PUBLISHED, msg_id=%d", event->msg_id);
         break;
-    case MQTT_EVENT_DATA:
+    case MQTT_EVENT_DATA: {
         ESP_LOGI(TAG, "MQTT_EVENT_DATA");
         printf("TOPIC=%.*s\r\n", event->topic_len, event->topic);
         printf("DATA=%.*s\r\n", event->data_len, event->data);
+
+        // Copy payload sang buffer có NUL-terminator
         char json[256];
-        size_t n = event->data_len;
+        size_t n = (size_t)event->data_len;
         if (n >= sizeof(json)) n = sizeof(json) - 1;
         memcpy(json, event->data, n);
         json[n] = '\0';
 
         EPData d;
         if (ep_parse(json, &d) == EP_OK) {
-           // ghi vào bản ghi toàn cục
+            // ---- GÁN ĐẦY ĐỦ VÀO s_last để bên BLE Mesh lấy ra ----
             s_last.add = d.add;
             s_last.price = d.price;
+
+            // copy barcode an toàn, luôn NUL-terminate
             strncpy(s_last.barcode, d.barcode, sizeof(s_last.barcode));
-            s_last.barcode[sizeof(s_last.barcode)-1] = '\0';
+            s_last.barcode[sizeof(s_last.barcode) - 1] = '\0';
+
+            // NEW: copy sale (%)
+            s_last.has_sale = d.has_sale;
+            s_last.sale     = d.sale;  // 0..100 nếu has_sale=true
+
+            // (nếu bạn đang dùng API dạng kho chung)
+            // mqtt_set_last(&s_last);    // <-- dùng khi có hàm này
+
+            // ---- Log rõ ràng ----
+            int32_t unit_after = ep_unit_price_after_sale(&d);   // = price nếu không có sale
+            int64_t total      = ep_total_cost(&d);
+
+            if (d.has_sale) {
+                ESP_LOGI(TAG,
+                    "Parsed OK: add=%u price=%d barcode=%s sale=%u%% -> unit=%d, total=%lld",
+                    (unsigned)d.add, (int)d.price, d.barcode,
+                    (unsigned)d.sale, (int)unit_after, (long long)total);
+            } else {
+                ESP_LOGI(TAG,
+                    "Parsed OK: add=%u price=%d barcode=%s sale=NA -> unit=%d, total=%lld",
+                    (unsigned)d.add, (int)d.price, d.barcode,
+                    (int)unit_after, (long long)total);
+            }
+
+            // Đặt cờ có dữ liệu mới (nếu bạn đang dùng cơ chế try_get_last)
             s_has_data = 1;
+
+            // Gửi luôn (nếu bạn muốn bắn ngay sau khi nhận MQTT)
+            example_ble_mesh_send_vendor_message(false);
+
         } else {
-            ESP_LOGE(TAG, "Parse fail");
+            ESP_LOGE(TAG, "Parse fail (payload khong dung format)");
         }
-        example_ble_mesh_send_vendor_message(false);
         break;
+    }
     case MQTT_EVENT_ERROR:
         ESP_LOGI(TAG, "MQTT_EVENT_ERROR");
         if (event->error_handle->error_type == MQTT_ERROR_TYPE_TCP_TRANSPORT) {

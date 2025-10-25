@@ -1,0 +1,97 @@
+[0;33m--- Warning: GDB cannot open serial ports accessed as COMx[0m
+[0;33m--- Using \\.\COM8 instead...[0m
+[0;33m--- esp-idf-monitor 1.7.0 on \\.\COM8 115200[0m
+[0;33m--- Quit: Ctrl+] | Menu: Ctrl+T | Help: Ctrl+T followed by Ctrl+H[0m
+[0m--- 0x40080400: [0;33m_init[0m[0m at [0;32m??[0m[0m:[1;31m?[0m
+[1;31m--- Error: ClearCommError failed (PermissionError(13, 'Access is denied.', None, 5))[0m
+[0;33m--- Waiting for the device to reconnect[0m[0;33m.[0m[0;33m.[0m[0;33m.[0m[0;33m.[0m[0;33m.[0m[0;33m.[0m[0;33m.[0m[0;33m.[0m[0;33m.[0m[0;33m.[0m[0;33m.[0m[0;33m.[0m[0;33m.[0m[0;33m.[0m[0;33m.[0m[0;33m.[0m[0;33m.[0m[0;33m.[0m[0;33m.[0m[0;33m.[0m[0;33m.[0m[0;33m.[0m[0;33m.[0m[0;33m.[0m[0;33m.[0m[0;33m.[0m[0;33m.[0m[0;33m.[0m[0;33m.[0m[0;33m.[0m[0;33m.[0m[0;33m.[0m[0;33m.[0m[0;33m.[0m[0;33m.[0m[0;33m.[0m[0;33m.[0m[0;33m.[0m[0;33m.[0m[0;33m.[0m[0;33m.[0m[0;33m.[0m[0;33m.[0m[0;33m.[0m[0;33m.[0m[0;33m.[0m[0;33m.[0m[0;33m.[0m[0;33m.[0m[0;33m.[0m[0;33m.[0m[0;33m.[0m[0;33m.[0m[0;33m.[0m[0;33m.[0m[0;33m.[0m[0;33m.[0m[0;33m.[0m[0;33m.[0m[0;33m.[0m[0;33m.[0m[0;33m.[0m[0;33m.[0m[0;33m.[0m[0;33m.[0m[0;33m.[0m[0;33m.[0m[0;33m.[0m[0;33m.[0m[0;33m.[0m[0;33m.[0m[0;33m.[0m[0;33m.[0m[0;33m.[0m[0;33m.[0m[0;33m.[0m[0;33m.[0m[0;33m.[0m[0;33m.[0m[0;33m.[0m[0;33m.[0m[0;33m.[0m[0;33m.[0m[0;33m.[0m[0;33m.[0m[0;33m.[0m[0;33m.[0m[0;33m.[0m[0;33m.[0m[0;33m.[0m[0;33m.[0m[0;33m.[0m[0;33m.[0m[0;33m.[0m[0;33m.[0m[0;33m.[0m[0;33m.[0m[0;33m.[0m[0;33m.[0m[0;33m.[0m[0;33m.[0m[0;33m.[0m[0;33m.[0m[0;33m.[0m[0;33m.[0m[0;33m.[0m[0;33m.[0m[0;33m.[0m[0;33m.[0m[0;33m.[0m[0;33m.[0m[0;33m.[0m[0;33m.[0m[0;33m.[0m[0;33m[0m
+[0m--- 0x40080400: [0;33m_init[0m[0m at [0;32m??[0m[0m:[1;31m?[0m
+[0;33m--- Warning: Checksum mismatch between flashed and built applications. Checksum of built application is 811714854e4ec66db7f3786ae1541f20e6d83683cc7592711d32c9f4174eb558[0m
+[0m--- 0x401342c6: [0;33mbt_mesh_net_retrans_match[0m[0m at [0;32m??[0m[0m:[1;31m?[0m
+[0m--- 0x401346d0: [0;33mbt_mesh_net_retrans_match[0m[0m at [0;32m??[0m[0m:[1;31m?[0m
+[0m--- 0x40083ac5: [0;33m_xt_lowint1[0m[0m at [0;32mD:/esp/Espressif/frameworks/esp-idf-v5.4.2/components/xtensa/xtensa_vectors.S[0m[0m:[1;31m1240[0m
+[0m--- 0x400857b1: [0;33mcrosscore_int_ll_trigger_interrupt[0m[0m at [0;32mD:/esp/Espressif/frameworks/esp-idf-v5.4.2/components/hal/esp32/include/hal/crosscore_int_ll.h[0m[0m:[1;31m37[0m
+[0m--- (inlined by) [0;33mesp_crosscore_int_send[0m[0m at [0;32mD:/esp/Espressif/frameworks/esp-idf-v5.4.2/components/esp_system/crosscore_int.c[0m[0m:[1;31m115[0m
+[0m--- 0x40092bee: [0;33mvTaskSuspend[0m[0m at [0;32mD:/esp/Espressif/frameworks/esp-idf-v5.4.2/components/freertos/FreeRTOS-Kernel/tasks.c[0m[0m:[1;31m2006[0m
+[0m--- 0x400de4c4: [0;33mmqtt_msg_buffer_init[0m[0m at [0;32mD:/esp/Espressif/frameworks/esp-idf-v5.4.2/components/mqtt/esp-mqtt/lib/mqtt_msg.c[0m[0m:[1;31m620[0m
+[0m--- 0x400dd1ca: [0;33mesp_mqtt_destroy_config[0m[0m at [0;32mD:/esp/Espressif/frameworks/esp-idf-v5.4.2/components/mqtt/esp-mqtt/mqtt_client.c[0m[0m:[1;31m634[0m
+[0m--- 0x400ddb37: [0;33mesp_mqtt_set_config[0m[0m at [0;32mD:/esp/Espressif/frameworks/esp-idf-v5.4.2/components/mqtt/esp-mqtt/mqtt_client.c[0m[0m:[1;31m613[0m
+[0m--- 0x400ddb64: [0;33mesp_mqtt_client_start[0m[0m at [0;32mD:/esp/Espressif/frameworks/esp-idf-v5.4.2/components/mqtt/esp-mqtt/mqtt_client.c[0m[0m:[1;31m1755[0m
+[0m--- 0x400dcd9a: [0;33mesp_mqtt_task[0m[0m at [0;32mD:/esp/Espressif/frameworks/esp-idf-v5.4.2/components/mqtt/esp-mqtt/mqtt_client.c[0m[0m:[1;31m1585[0m
+[0m--- 0x400dcf72: [0;33mhas_timed_out[0m[0m at [0;32mD:/esp/Espressif/frameworks/esp-idf-v5.4.2/components/mqtt/esp-mqtt/mqtt_client.c[0m[0m:[1;31m668[0m
+[0m--- (inlined by) [0;33mesp_mqtt_task[0m[0m at [0;32mD:/esp/Espressif/frameworks/esp-idf-v5.4.2/components/mqtt/esp-mqtt/mqtt_client.c[0m[0m:[1;31m1684[0m
+[0m--- 0x400dc3f0: [0;33mmqtt_message_receive[0m[0m at [0;32mD:/esp/Espressif/frameworks/esp-idf-v5.4.2/components/mqtt/esp-mqtt/mqtt_client.c[0m[0m:[1;31m1235[0m
+[0m--- 0x40164933: [0;33mhostap_recv_mgmt[0m[0m at [0;32m??[0m[0m:[1;31m?[0m
+[0m--- 0x4009114e: [0;33m_frxt_int_enter[0m[0m at [0;32mD:/esp/Espressif/frameworks/esp-idf-v5.4.2/components/freertos/FreeRTOS-Kernel/portable/xtensa/portasm.S[0m[0m:[1;31m140[0m
+[0m--- 0x401342c6: [0;33mbt_mesh_net_retrans_match[0m[0m at [0;32m??[0m[0m:[1;31m?[0m
+[0m--- 0x401346d0: [0;33mbt_mesh_net_retrans_match[0m[0m at [0;32m??[0m[0m:[1;31m?[0m
+[0m--- 0x40083ac5: [0;33m_xt_lowint1[0m[0m at [0;32mD:/esp/Espressif/frameworks/esp-idf-v5.4.2/components/xtensa/xtensa_vectors.S[0m[0m:[1;31m1240[0m
+[0m--- 0x4009162c: [0;33mxEventGroupClearBits[0m[0m at [0;32mD:/esp/Espressif/frameworks/esp-idf-v5.4.2/components/freertos/FreeRTOS-Kernel/event_groups.c[0m[0m:[1;31m497[0m
+[0m--- 0x400de45f: [0;33mmqtt_has_valid_msg_hdr[0m[0m at [0;32mD:/esp/Espressif/frameworks/esp-idf-v5.4.2/components/mqtt/esp-mqtt/lib/mqtt_msg.c[0m[0m:[1;31m590[0m
+[0m--- 0x400dd1f0: [0;33mesp_mqtt_destroy_config[0m[0m at [0;32mD:/esp/Espressif/frameworks/esp-idf-v5.4.2/components/mqtt/esp-mqtt/mqtt_client.c[0m[0m:[1;31m640[0m
+[0m--- 0x400ddb37: [0;33mesp_mqtt_set_config[0m[0m at [0;32mD:/esp/Espressif/frameworks/esp-idf-v5.4.2/components/mqtt/esp-mqtt/mqtt_client.c[0m[0m:[1;31m613[0m
+[0m--- 0x400ddb64: [0;33mesp_mqtt_client_start[0m[0m at [0;32mD:/esp/Espressif/frameworks/esp-idf-v5.4.2/components/mqtt/esp-mqtt/mqtt_client.c[0m[0m:[1;31m1755[0m
+[0m--- 0x400dcd9a: [0;33mesp_mqtt_task[0m[0m at [0;32mD:/esp/Espressif/frameworks/esp-idf-v5.4.2/components/mqtt/esp-mqtt/mqtt_client.c[0m[0m:[1;31m1585[0m
+[0m--- 0x400dcf72: [0;33mhas_timed_out[0m[0m at [0;32mD:/esp/Espressif/frameworks/esp-idf-v5.4.2/components/mqtt/esp-mqtt/mqtt_client.c[0m[0m:[1;31m668[0m
+[0m--- (inlined by) [0;33mesp_mqtt_task[0m[0m at [0;32mD:/esp/Espressif/frameworks/esp-idf-v5.4.2/components/mqtt/esp-mqtt/mqtt_client.c[0m[0m:[1;31m1684[0m
+[0m--- 0x400dc3f0: [0;33mmqtt_message_receive[0m[0m at [0;32mD:/esp/Espressif/frameworks/esp-idf-v5.4.2/components/mqtt/esp-mqtt/mqtt_client.c[0m[0m:[1;31m1235[0m
+[0m--- 0x40164933: [0;33mhostap_recv_mgmt[0m[0m at [0;32m??[0m[0m:[1;31m?[0m
+[0m--- 0x4009114e: [0;33m_frxt_int_enter[0m[0m at [0;32mD:/esp/Espressif/frameworks/esp-idf-v5.4.2/components/freertos/FreeRTOS-Kernel/portable/xtensa/portasm.S[0m[0m:[1;31m140[0m
+[0m--- 0x401342c6: [0;33mbt_mesh_net_retrans_match[0m[0m at [0;32m??[0m[0m:[1;31m?[0m
+[0m--- 0x401346d0: [0;33mbt_mesh_net_retrans_match[0m[0m at [0;32m??[0m[0m:[1;31m?[0m
+[0m--- 0x40083ac5: [0;33m_xt_lowint1[0m[0m at [0;32mD:/esp/Espressif/frameworks/esp-idf-v5.4.2/components/xtensa/xtensa_vectors.S[0m[0m:[1;31m1240[0m
+[0m--- 0x4008e21d: [0;33mr_rwble_isr[0m[0m at [0;32m??[0m[0m:[1;31m?[0m
+[0m--- 0x400de45f: [0;33mmqtt_has_valid_msg_hdr[0m[0m at [0;32mD:/esp/Espressif/frameworks/esp-idf-v5.4.2/components/mqtt/esp-mqtt/lib/mqtt_msg.c[0m[0m:[1;31m590[0m
+[0m--- 0x400dd1f0: [0;33mesp_mqtt_destroy_config[0m[0m at [0;32mD:/esp/Espressif/frameworks/esp-idf-v5.4.2/components/mqtt/esp-mqtt/mqtt_client.c[0m[0m:[1;31m640[0m
+[0m--- 0x400ddb37: [0;33mesp_mqtt_set_config[0m[0m at [0;32mD:/esp/Espressif/frameworks/esp-idf-v5.4.2/components/mqtt/esp-mqtt/mqtt_client.c[0m[0m:[1;31m613[0m
+[0m--- 0x400ddb64: [0;33mesp_mqtt_client_start[0m[0m at [0;32mD:/esp/Espressif/frameworks/esp-idf-v5.4.2/components/mqtt/esp-mqtt/mqtt_client.c[0m[0m:[1;31m1755[0m
+[0m--- 0x400dcd9a: [0;33mesp_mqtt_task[0m[0m at [0;32mD:/esp/Espressif/frameworks/esp-idf-v5.4.2/components/mqtt/esp-mqtt/mqtt_client.c[0m[0m:[1;31m1585[0m
+[0m--- 0x400dcf72: [0;33mhas_timed_out[0m[0m at [0;32mD:/esp/Espressif/frameworks/esp-idf-v5.4.2/components/mqtt/esp-mqtt/mqtt_client.c[0m[0m:[1;31m668[0m
+[0m--- (inlined by) [0;33mesp_mqtt_task[0m[0m at [0;32mD:/esp/Espressif/frameworks/esp-idf-v5.4.2/components/mqtt/esp-mqtt/mqtt_client.c[0m[0m:[1;31m1684[0m
+[0m--- 0x400dc3f0: [0;33mmqtt_message_receive[0m[0m at [0;32mD:/esp/Espressif/frameworks/esp-idf-v5.4.2/components/mqtt/esp-mqtt/mqtt_client.c[0m[0m:[1;31m1235[0m
+[0m--- 0x40164933: [0;33mhostap_recv_mgmt[0m[0m at [0;32m??[0m[0m:[1;31m?[0m
+[0m--- 0x4009114e: [0;33m_frxt_int_enter[0m[0m at [0;32mD:/esp/Espressif/frameworks/esp-idf-v5.4.2/components/freertos/FreeRTOS-Kernel/portable/xtensa/portasm.S[0m[0m:[1;31m140[0m
+[0m--- 0x401342c6: [0;33mbt_mesh_net_retrans_match[0m[0m at [0;32m??[0m[0m:[1;31m?[0m
+[0m--- 0x401346d0: [0;33mbt_mesh_net_retrans_match[0m[0m at [0;32m??[0m[0m:[1;31m?[0m
+[0m--- 0x40083ac5: [0;33m_xt_lowint1[0m[0m at [0;32mD:/esp/Espressif/frameworks/esp-idf-v5.4.2/components/xtensa/xtensa_vectors.S[0m[0m:[1;31m1240[0m
+[0m--- 0x40082fd9: [0;33mesp_timer_impl_get_counter_reg[0m[0m at [0;32mD:/esp/Espressif/frameworks/esp-idf-v5.4.2/components/esp_timer/src/esp_timer_impl_lac.c[0m[0m:[1;31m106[0m
+[0m--- 0x40082fe7: [0;33mesp_timer_impl_get_counter_reg[0m[0m at [0;32mD:/esp/Espressif/frameworks/esp-idf-v5.4.2/components/esp_timer/src/esp_timer_impl_lac.c[0m[0m:[1;31m116[0m
+[0m--- 0x400de497: [0;33mmqtt_has_valid_msg_hdr[0m[0m at [0;32mD:/esp/Espressif/frameworks/esp-idf-v5.4.2/components/mqtt/esp-mqtt/lib/mqtt_msg.c[0m[0m:[1;31m613[0m
+[0m--- 0x400dd1d9: [0;33mesp_mqtt_destroy_config[0m[0m at [0;32mD:/esp/Espressif/frameworks/esp-idf-v5.4.2/components/mqtt/esp-mqtt/mqtt_client.c[0m[0m:[1;31m637[0m
+[0m--- 0x400ddb37: [0;33mesp_mqtt_set_config[0m[0m at [0;32mD:/esp/Espressif/frameworks/esp-idf-v5.4.2/components/mqtt/esp-mqtt/mqtt_client.c[0m[0m:[1;31m613[0m
+[0m--- 0x400ddb64: [0;33mesp_mqtt_client_start[0m[0m at [0;32mD:/esp/Espressif/frameworks/esp-idf-v5.4.2/components/mqtt/esp-mqtt/mqtt_client.c[0m[0m:[1;31m1755[0m
+[0m--- 0x400dcd9a: [0;33mesp_mqtt_task[0m[0m at [0;32mD:/esp/Espressif/frameworks/esp-idf-v5.4.2/components/mqtt/esp-mqtt/mqtt_client.c[0m[0m:[1;31m1585[0m
+[0m--- 0x400dcf72: [0;33mhas_timed_out[0m[0m at [0;32mD:/esp/Espressif/frameworks/esp-idf-v5.4.2/components/mqtt/esp-mqtt/mqtt_client.c[0m[0m:[1;31m668[0m
+[0m--- (inlined by) [0;33mesp_mqtt_task[0m[0m at [0;32mD:/esp/Espressif/frameworks/esp-idf-v5.4.2/components/mqtt/esp-mqtt/mqtt_client.c[0m[0m:[1;31m1684[0m
+[0m--- 0x400dc3f0: [0;33mmqtt_message_receive[0m[0m at [0;32mD:/esp/Espressif/frameworks/esp-idf-v5.4.2/components/mqtt/esp-mqtt/mqtt_client.c[0m[0m:[1;31m1235[0m
+[0m--- 0x40164933: [0;33mhostap_recv_mgmt[0m[0m at [0;32m??[0m[0m:[1;31m?[0m
+[0m--- 0x4009114e: [0;33m_frxt_int_enter[0m[0m at [0;32mD:/esp/Espressif/frameworks/esp-idf-v5.4.2/components/freertos/FreeRTOS-Kernel/portable/xtensa/portasm.S[0m[0m:[1;31m140[0m
+[0m--- 0x401342c6: [0;33mbt_mesh_net_retrans_match[0m[0m at [0;32m??[0m[0m:[1;31m?[0m
+[0m--- 0x401346d0: [0;33mbt_mesh_net_retrans_match[0m[0m at [0;32m??[0m[0m:[1;31m?[0m
+[0m--- 0x40083ac5: [0;33m_xt_lowint1[0m[0m at [0;32mD:/esp/Espressif/frameworks/esp-idf-v5.4.2/components/xtensa/xtensa_vectors.S[0m[0m:[1;31m1240[0m
+[0m--- 0x4009162c: [0;33mxEventGroupClearBits[0m[0m at [0;32mD:/esp/Espressif/frameworks/esp-idf-v5.4.2/components/freertos/FreeRTOS-Kernel/event_groups.c[0m[0m:[1;31m497[0m
+[0m--- 0x400de45f: [0;33mmqtt_has_valid_msg_hdr[0m[0m at [0;32mD:/esp/Espressif/frameworks/esp-idf-v5.4.2/components/mqtt/esp-mqtt/lib/mqtt_msg.c[0m[0m:[1;31m590[0m
+[0m--- 0x400dd1f0: [0;33mesp_mqtt_destroy_config[0m[0m at [0;32mD:/esp/Espressif/frameworks/esp-idf-v5.4.2/components/mqtt/esp-mqtt/mqtt_client.c[0m[0m:[1;31m640[0m
+[0m--- 0x400ddb37: [0;33mesp_mqtt_set_config[0m[0m at [0;32mD:/esp/Espressif/frameworks/esp-idf-v5.4.2/components/mqtt/esp-mqtt/mqtt_client.c[0m[0m:[1;31m613[0m
+[0m--- 0x400ddb64: [0;33mesp_mqtt_client_start[0m[0m at [0;32mD:/esp/Espressif/frameworks/esp-idf-v5.4.2/components/mqtt/esp-mqtt/mqtt_client.c[0m[0m:[1;31m1755[0m
+[0m--- 0x400dcd9a: [0;33mesp_mqtt_task[0m[0m at [0;32mD:/esp/Espressif/frameworks/esp-idf-v5.4.2/components/mqtt/esp-mqtt/mqtt_client.c[0m[0m:[1;31m1585[0m
+[0m--- 0x400dcf72: [0;33mhas_timed_out[0m[0m at [0;32mD:/esp/Espressif/frameworks/esp-idf-v5.4.2/components/mqtt/esp-mqtt/mqtt_client.c[0m[0m:[1;31m668[0m
+[0m--- (inlined by) [0;33mesp_mqtt_task[0m[0m at [0;32mD:/esp/Espressif/frameworks/esp-idf-v5.4.2/components/mqtt/esp-mqtt/mqtt_client.c[0m[0m:[1;31m1684[0m
+[0m--- 0x400dc3f0: [0;33mmqtt_message_receive[0m[0m at [0;32mD:/esp/Espressif/frameworks/esp-idf-v5.4.2/components/mqtt/esp-mqtt/mqtt_client.c[0m[0m:[1;31m1235[0m
+[0m--- 0x40164933: [0;33mhostap_recv_mgmt[0m[0m at [0;32m??[0m[0m:[1;31m?[0m
+[0m--- 0x4009114e: [0;33m_frxt_int_enter[0m[0m at [0;32mD:/esp/Espressif/frameworks/esp-idf-v5.4.2/components/freertos/FreeRTOS-Kernel/portable/xtensa/portasm.S[0m[0m:[1;31m140[0m
+[0m--- 0x401342c6: [0;33mbt_mesh_net_retrans_match[0m[0m at [0;32m??[0m[0m:[1;31m?[0m
+[0m--- 0x401346d0: [0;33mbt_mesh_net_retrans_match[0m[0m at [0;32m??[0m[0m:[1;31m?[0m
+[0m--- 0x40083ac5: [0;33m_xt_lowint1[0m[0m at [0;32mD:/esp/Espressif/frameworks/esp-idf-v5.4.2/components/xtensa/xtensa_vectors.S[0m[0m:[1;31m1240[0m
+[0m--- 0x4009162c: [0;33mxEventGroupClearBits[0m[0m at [0;32mD:/esp/Espressif/frameworks/esp-idf-v5.4.2/components/freertos/FreeRTOS-Kernel/event_groups.c[0m[0m:[1;31m497[0m
+[0m--- 0x400de45f: [0;33mmqtt_has_valid_msg_hdr[0m[0m at [0;32mD:/esp/Espressif/frameworks/esp-idf-v5.4.2/components/mqtt/esp-mqtt/lib/mqtt_msg.c[0m[0m:[1;31m590[0m
+[0m--- 0x400dd1f0: [0;33mesp_mqtt_destroy_config[0m[0m at [0;32mD:/esp/Espressif/frameworks/esp-idf-v5.4.2/components/mqtt/esp-mqtt/mqtt_client.c[0m[0m:[1;31m640[0m
+[0m--- 0x400ddb37: [0;33mesp_mqtt_set_config[0m[0m at [0;32mD:/esp/Espressif/frameworks/esp-idf-v5.4.2/components/mqtt/esp-mqtt/mqtt_client.c[0m[0m:[1;31m613[0m
+[0m--- 0x400ddb64: [0;33mesp_mqtt_client_start[0m[0m at [0;32mD:/esp/Espressif/frameworks/esp-idf-v5.4.2/components/mqtt/esp-mqtt/mqtt_client.c[0m[0m:[1;31m1755[0m
+[0m--- 0x400dcd9a: [0;33mesp_mqtt_task[0m[0m at [0;32mD:/esp/Espressif/frameworks/esp-idf-v5.4.2/components/mqtt/esp-mqtt/mqtt_client.c[0m[0m:[1;31m1585[0m
+[0m--- 0x400dcf72: [0;33mhas_timed_out[0m[0m at [0;32mD:/esp/Espressif/frameworks/esp-idf-v5.4.2/components/mqtt/esp-mqtt/mqtt_client.c[0m[0m:[1;31m668[0m
+[0m--- (inlined by) [0;33mesp_mqtt_task[0m[0m at [0;32mD:/esp/Espressif/frameworks/esp-idf-v5.4.2/components/mqtt/esp-mqtt/mqtt_client.c[0m[0m:[1;31m1684[0m
+[0m--- 0x400dc3f0: [0;33mmqtt_message_receive[0m[0m at [0;32mD:/esp/Espressif/frameworks/esp-idf-v5.4.2/components/mqtt/esp-mqtt/mqtt_client.c[0m[0m:[1;31m1235[0m
+[0m--- 0x40164933: [0;33mhostap_recv_mgmt[0m[0m at [0;32m??[0m[0m:[1;31m?[0m
+[0m--- 0x4009114e: [0;33m_frxt_int_enter[0m[0m at [0;32mD:/esp/Espressif/frameworks/esp-idf-v5.4.2/components/freertos/FreeRTOS-Kernel/portable/xtensa/portasm.S[0m[0m:[1;31m140[0m
+[0m

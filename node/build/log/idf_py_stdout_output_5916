@@ -1,0 +1,212 @@
+ets Jul 29 2019 12:21:46
+
+rst:0x1 (POWERON_RESET),boot:0x13 (SPI_FAST_FLASH_BOOT)
+configsip: 0, SPIWP:0xee
+clk_drv:0x00,q_drv:0x00,d_drv:0x00,cs0_drv:0x00,hd_drv:0x00,wp_drv:0x00
+mode:DIO, clock div:2
+load:0x3fff0030,len:6276
+load:0x40078000,len:15736
+load:0x40080400,len:4
+load:0x40080404,len:3860
+entry 0x4008063c
+[0;32mI (29) boot: ESP-IDF v5.4.2 2nd stage bootloader[0m
+[0;32mI (29) boot: compile time Oct 17 2025 12:35:20[0m
+[0;32mI (29) boot: Multicore bootloader[0m
+[0;32mI (31) boot: chip revision: v3.1[0m
+[0;32mI (34) boot.esp32: SPI Speed      : 40MHz[0m
+[0;32mI (37) boot.esp32: SPI Mode       : DIO[0m
+[0;32mI (41) boot.esp32: SPI Flash Size : 2MB[0m
+[0;32mI (44) boot: Enabling RNG early entropy source...[0m
+[0;32mI (49) boot: Partition Table:[0m
+[0;32mI (51) boot: ## Label            Usage          Type ST Offset   Length[0m
+[0;32mI (58) boot:  0 nvs              WiFi data        01 02 00009000 00006000[0m
+[0;32mI (64) boot:  1 phy_init         RF data          01 01 0000f000 00001000[0m
+[0;32mI (71) boot:  2 factory          factory app      00 00 00010000 00177000[0m
+[0;32mI (77) boot: End of partition table[0m
+[0;32mI (81) esp_image: segment 0: paddr=00010020 vaddr=3f400020 size=2cfech (184300) map[0m
+[0;32mI (151) esp_image: segment 1: paddr=0003d014 vaddr=3ff80000 size=0001ch (    28) load[0m
+[0;32mI (151) esp_image: segment 2: paddr=0003d038 vaddr=3ffbdb60 size=02fe0h ( 12256) load[0m
+[0;32mI (160) esp_image: segment 3: paddr=00040020 vaddr=400d0020 size=97458h (619608) map[0m
+[0;32mI (374) esp_image: segment 4: paddr=000d7480 vaddr=3ffc0b40 size=021ach (  8620) load[0m
+[0;32mI (378) esp_image: segment 5: paddr=000d9634 vaddr=40080000 size=18720h (100128) load[0m
+[0;32mI (429) boot: Loaded app from partition at offset 0x10000[0m
+[0;32mI (429) boot: Disabling RNG early entropy source...[0m
+[0;32mI (439) cpu_start: Multicore app[0m
+[0;32mI (448) cpu_start: Pro cpu start user code[0m
+[0;32mI (448) cpu_start: cpu freq: 160000000 Hz[0m
+[0;32mI (448) app_init: Application information:[0m
+[0;32mI (448) app_init: Project name:     vendor_server[0m
+[0;32mI (452) app_init: App version:      1[0m
+[0;32mI (456) app_init: Compile time:     Oct 17 2025 12:34:54[0m
+[0;32mI (461) app_init: ELF file SHA256:  274dfd612...[0m
+[0;32mI (465) app_init: ESP-IDF:          v5.4.2[0m
+[0;32mI (469) efuse_init: Min chip rev:     v0.0[0m
+[0;32mI (473) efuse_init: Max chip rev:     v3.99 [0m
+[0;32mI (477) efuse_init: Chip rev:         v3.1[0m
+[0;32mI (481) heap_init: Initializing. RAM available for dynamic allocation:[0m
+[0;32mI (487) heap_init: At 3FFAFF10 len 000000F0 (0 KiB): DRAM[0m
+[0;32mI (492) heap_init: At 3FFB6388 len 00001C78 (7 KiB): DRAM[0m
+[0;32mI (497) heap_init: At 3FFB9A20 len 00004108 (16 KiB): DRAM[0m
+[0;32mI (502) heap_init: At 3FFCAD80 len 00015280 (84 KiB): DRAM[0m
+[0;32mI (508) heap_init: At 3FFE0440 len 00003AE0 (14 KiB): D/IRAM[0m
+[0;32mI (513) heap_init: At 3FFE4350 len 0001BCB0 (111 KiB): D/IRAM[0m
+[0;32mI (518) heap_init: At 40098720 len 000078E0 (30 KiB): IRAM[0m
+[0;32mI (525) spi_flash: detected chip: generic[0m
+[0;32mI (527) spi_flash: flash io: dio[0m
+[0;33mW (530) spi_flash: Detected size(4096k) larger than the size in the binary image header(2048k). Using the size in the binary image header.[0m
+[0;32mI (544) coexist: coex firmware version: 7b9a184[0m
+[0;32mI (548) main_task: Started on CPU0[0m
+[0;32mI (558) main_task: Calling app_main()[0m
+[0;32mI (558) EXAMPLE: Initializing...[0m
+[0;32mI (598) BTDM_INIT: BT controller compile version [b992c7d][0m
+[0;32mI (598) BTDM_INIT: Bluetooth MAC: 00:4b:12:8f:62:c6[0m
+[0;32mI (598) phy_init: phy_version 4860,6b7a6e5,Feb  6 2025,14:47:07[0m
+[0;32mI (948) EXAMPLE: Before initArduino[0m
+[0;32mI (948) EXAMPLE: After initArduino[0m
+[0;32mI (948) gpio: GPIO[18]| InputEn: 1| OutputEn: 1| OpenDrain: 0| Pullup: 0| Pulldown: 0| Intr:0 [0m
+[0;32mI (948) gpio: GPIO[23]| InputEn: 1| OutputEn: 1| OpenDrain: 0| Pullup: 0| Pulldown: 0| Intr:0 [0m
+[0;32mI (958) EXAMPLE: After SPI.begin[0m
+[0;32mI (958) EXAMPLE: Before g_tag.begin[0m
+[0;32mI (968) gpio: GPIO[5]| InputEn: 1| OutputEn: 1| OpenDrain: 0| Pullup: 0| Pulldown: 0| Intr:0 [0m
+[0;32mI (968) gpio: GPIO[17]| InputEn: 1| OutputEn: 1| OpenDrain: 0| Pullup: 0| Pulldown: 0| Intr:0 [0m
+[0;32mI (978) gpio: GPIO[16]| InputEn: 1| OutputEn: 1| OpenDrain: 0| Pullup: 0| Pulldown: 0| Intr:0 [0m
+[0;32mI (988) gpio: GPIO[4]| InputEn: 1| OutputEn: 0| OpenDrain: 0| Pullup: 1| Pulldown: 0| Intr:0 [0m
+[0;32mI (998) EPD: display->init() start[0m
+[0;32mI (998) gpio: GPIO[5]| InputEn: 1| OutputEn: 1| OpenDrain: 0| Pullup: 0| Pulldown: 0| Intr:0 [0m
+[0;32mI (1008) gpio: GPIO[16]| InputEn: 1| OutputEn: 1| OpenDrain: 0| Pullup: 0| Pulldown: 0| Intr:0 [0m
+[0;32mI (1048) gpio: GPIO[16]| InputEn: 1| OutputEn: 1| OpenDrain: 0| Pullup: 0| Pulldown: 0| Intr:0 [0m
+[0;32mI (1048) gpio: GPIO[5]| InputEn: 1| OutputEn: 1| OpenDrain: 0| Pullup: 0| Pulldown: 0| Intr:0 [0m
+[0;32mI (1048) gpio: GPIO[17]| InputEn: 1| OutputEn: 1| OpenDrain: 0| Pullup: 0| Pulldown: 0| Intr:0 [0m
+[0;32mI (1058) gpio: GPIO[4]| InputEn: 1| OutputEn: 0| OpenDrain: 0| Pullup: 0| Pulldown: 0| Intr:0 [0m
+[0;32mI (1068) EPD: display->init() ok[0m
+[0;32mI (1468) EPD: first empty refresh done[0m
+[0;32mI (1468) EXAMPLE: After g_tag.begin[0m
+[0;32mI (1548) EXAMPLE: ESP_BLE_MESH_PROV_REGISTER_COMP_EVT, err_code 0[0m
+[0;32mI (1558) EXAMPLE: ESP_BLE_MESH_NODE_PROV_ENABLE_COMP_EVT, err_code 0[0m
+[0;32mI (1558) EXAMPLE: BLE Mesh Node initialized[0m
+[0;32mI (1568) main_task: Returned from app_main()[0m
+[0;32mI (1608) EXAMPLE: ESP_BLE_MESH_NODE_PROV_LINK_OPEN_EVT, bearer PB-ADV[0m
+[0;32mI (3788) EXAMPLE: ESP_BLE_MESH_NODE_PROV_COMPLETE_EVT[0m
+[0;32mI (3788) EXAMPLE: net_idx 0x000, addr 0x0005[0m
+[0;32mI (3798) EXAMPLE: flags 0x00, iv_index 0x00000000[0m
+[0;32mI (3798) EXAMPLE: === MY UNICAST ADDR: 0x0005 ===[0m
+[0;32mI (4018) EXAMPLE: ESP_BLE_MESH_NODE_PROV_LINK_CLOSE_EVT, bearer PB-ADV[0m
+[0;32mI (4568) EXAMPLE: ESP_BLE_MESH_MODEL_OP_APP_KEY_ADD[0m
+[0;32mI (4568) EXAMPLE: net_idx 0x0000, app_idx 0x0000[0m
+[0;32mI (4568) AppKey: 12 12 12 12 12 12 12 12 12 12 12 12 12 12 12 12[0m
+[0;32mI (4718) EXAMPLE: ESP_BLE_MESH_MODEL_OP_MODEL_APP_BIND[0m
+[0;32mI (4718) EXAMPLE: elem_addr 0x0005, app_idx 0x0000, cid 0x02e5, mod_id 0x0001[0m
+[0;32mI (13928) EXAMPLE: Recv 0xc002e5 from 0x0001 | TID=0x0015 | price=99000 | sale=30% | barcode=0000012345678[0m
+[0;32mI (13928) RENDER: start: title=THIT GA sale=30% orig=99.000 final=69.300 ean=0000012345678[0m
+[0;32mI (13928) EXAMPLE: ACKed TID 0x0015[0m
+[0;32mI (13938) EXAMPLE: Send 0xc102e5[0m
+[0;32mI (14158) RENDER: done[0m
+ets Jul 29 2019 12:21:46
+
+rst:0x1 (POWERON_RESET),boot:0x13 (SPI_FAST_FLASH_BOOT)
+configsip: 0, SPIWP:0xee
+clk_drv:0x00,q_drv:0x00,d_drv:0x00,cs0_drv:0x00,hd_drv:0x00,wp_drv:0x00
+mode:DIO, clock div:2
+load:0x3fff0030,len:6276
+load:0x40078000,len:15736
+load:0x40080400,len:4
+load:0x40080404,len:3860
+entry 0x4008063c
+[0;32mI (29) boot: ESP-IDF v5.4.2 2nd stage bootloader[0m
+[0;32mI (29) boot: compile time Oct 17 2025 12:35:20[0m
+[0;32mI (29) boot: Multicore bootloader[0m
+[0;32mI (31) boot: chip revision: v3.1[0m
+[0;32mI (34) boot.esp32: SPI Speed      : 40MHz[0m
+[0;32mI (37) boot.esp32: SPI Mode       : DIO[0m
+[0;32mI (41) boot.esp32: SPI Flash Size : 2MB[0m
+[0;32mI (44) boot: Enabling RNG early entropy source...[0m
+[0;32mI (49) boot: Partition Table:[0m
+[0;32mI (51) boot: ## Label            Usage          Type ST Offset   Length[0m
+[0;32mI (58) boot:  0 nvs              WiFi data        01 02 00009000 00006000[0m
+[0;32mI (64) boot:  1 phy_init         RF data          01 01 0000f000 00001000[0m
+[0;32mI (71) boot:  2 factory          factory app      00 00 00010000 00177000[0m
+[0;32mI (77) boot: End of partition table[0m
+[0;32mI (81) esp_image: segment 0: paddr=00010020 vaddr=3f400020 size=2cfech (184300) map[0m
+[0;32mI (151) esp_image: segment 1: paddr=0003d014 vaddr=3ff80000 size=0001ch (    28) load[0m
+[0;32mI (151) esp_image: segment 2: paddr=0003d038 vaddr=3ffbdb60 size=02fe0h ( 12256) load[0m
+[0;32mI (160) esp_image: segment 3: paddr=00040020 vaddr=400d0020 size=97458h (619608) map[0m
+[0;32mI (374) esp_image: segment 4: paddr=000d7480 vaddr=3ffc0b40 size=021ach (  8620) load[0m
+[0;32mI (378) esp_image: segment 5: paddr=000d9634 vaddr=40080000 size=18720h (100128) load[0m
+[0;32mI (429) boot: Loaded app from partition at offset 0x10000[0m
+[0;32mI (429) boot: Disabling RNG early entropy source...[0m
+[0;32mI (439) cpu_start: Multicore app[0m
+[0;32mI (448) cpu_start: Pro cpu start user code[0m
+[0;32mI (448) cpu_start: cpu freq: 160000000 Hz[0m
+[0;32mI (448) app_init: Application information:[0m
+[0;32mI (448) app_init: Project name:     vendor_server[0m
+[0;32mI (452) app_init: App version:      1[0m
+[0;32mI (456) app_init: Compile time:     Oct 17 2025 12:34:54[0m
+[0;32mI (461) app_init: ELF file SHA256:  274dfd612...[0m
+[0;32mI (465) app_init: ESP-IDF:          v5.4.2[0m
+[0;32mI (469) efuse_init: Min chip rev:     v0.0[0m
+[0;32mI (473) efuse_init: Max chip rev:     v3.99 [0m
+[0;32mI (477) efuse_init: Chip rev:         v3.1[0m
+[0;32mI (481) heap_init: Initializing. RAM available for dynamic allocation:[0m
+[0;32mI (487) heap_init: At 3FFAFF10 len 000000F0 (0 KiB): DRAM[0m
+[0;32mI (492) heap_init: At 3FFB6388 len 00001C78 (7 KiB): DRAM[0m
+[0;32mI (497) heap_init: At 3FFB9A20 len 00004108 (16 KiB): DRAM[0m
+[0;32mI (502) heap_init: At 3FFCAD80 len 00015280 (84 KiB): DRAM[0m
+[0;32mI (508) heap_init: At 3FFE0440 len 00003AE0 (14 KiB): D/IRAM[0m
+[0;32mI (513) heap_init: At 3FFE4350 len 0001BCB0 (111 KiB): D/IRAM[0m
+[0;32mI (518) heap_init: At 40098720 len 000078E0 (30 KiB): IRAM[0m
+[0;32mI (525) spi_flash: detected chip: generic[0m
+[0;32mI (527) spi_flash: flash io: dio[0m
+[0;33mW (530) spi_flash: Detected size(4096k) larger than the size in the binary image header(2048k). Using the size in the binary image header.[0m
+[0;32mI (544) coexist: coex firmware version: 7b9a184[0m
+[0;32mI (548) main_task: Started on CPU0[0m
+[0;32mI (558) main_task: Calling app_main()[0m
+[0;32mI (558) EXAMPLE: Initializing...[0m
+[0;32mI (598) BTDM_INIT: BT controller compile version [b992c7d][0m
+[0;32mI (598) BTDM_INIT: Bluetooth MAC: 00:4b:12:8f:62:c6[0m
+[0;32mI (598) phy_init: phy_version 4860,6b7a6e5,Feb  6 2025,14:47:07[0m
+[0;32mI (678) phy_init: Saving new calibration data due to checksum failure or outdated calibration data, mode(0)[0m
+[0;32mI (978) EXAMPLE: Before initArduino[0m
+[0;32mI (978) EXAMPLE: After initArduino[0m
+[0;32mI (978) gpio: GPIO[18]| InputEn: 1| OutputEn: 1| OpenDrain: 0| Pullup: 0| Pulldown: 0| Intr:0 [0m
+[0;32mI (988) gpio: GPIO[23]| InputEn: 1| OutputEn: 1| OpenDrain: 0| Pullup: 0| Pulldown: 0| Intr:0 [0m
+[0;32mI (988) EXAMPLE: After SPI.begin[0m
+[0;32mI (998) EXAMPLE: Before g_tag.begin[0m
+[0;32mI (998) gpio: GPIO[5]| InputEn: 1| OutputEn: 1| OpenDrain: 0| Pullup: 0| Pulldown: 0| Intr:0 [0m
+[0;32mI (1008) gpio: GPIO[17]| InputEn: 1| OutputEn: 1| OpenDrain: 0| Pullup: 0| Pulldown: 0| Intr:0 [0m
+[0;32mI (1018) gpio: GPIO[16]| InputEn: 1| OutputEn: 1| OpenDrain: 0| Pullup: 0| Pulldown: 0| Intr:0 [0m
+[0;32mI (1018) gpio: GPIO[4]| InputEn: 1| OutputEn: 0| OpenDrain: 0| Pullup: 1| Pulldown: 0| Intr:0 [0m
+[0;32mI (1028) EPD: display->init() start[0m
+[0;32mI (1038) gpio: GPIO[5]| InputEn: 1| OutputEn: 1| OpenDrain: 0| Pullup: 0| Pulldown: 0| Intr:0 [0m
+[0;32mI (1038) gpio: GPIO[16]| InputEn: 1| OutputEn: 1| OpenDrain: 0| Pullup: 0| Pulldown: 0| Intr:0 [0m
+[0;32mI (1078) gpio: GPIO[16]| InputEn: 1| OutputEn: 1| OpenDrain: 0| Pullup: 0| Pulldown: 0| Intr:0 [0m
+[0;32mI (1078) gpio: GPIO[5]| InputEn: 1| OutputEn: 1| OpenDrain: 0| Pullup: 0| Pulldown: 0| Intr:0 [0m
+[0;32mI (1078) gpio: GPIO[17]| InputEn: 1| OutputEn: 1| OpenDrain: 0| Pullup: 0| Pulldown: 0| Intr:0 [0m
+[0;32mI (1088) gpio: GPIO[4]| InputEn: 1| OutputEn: 0| OpenDrain: 0| Pullup: 0| Pulldown: 0| Intr:0 [0m
+[0;32mI (1098) EPD: display->init() ok[0m
+[0;32mI (1498) EPD: first empty refresh done[0m
+[0;32mI (1498) EXAMPLE: After g_tag.begin[0m
+[0;32mI (1578) EXAMPLE: ESP_BLE_MESH_PROV_REGISTER_COMP_EVT, err_code 0[0m
+[0;32mI (1598) EXAMPLE: ESP_BLE_MESH_NODE_PROV_ENABLE_COMP_EVT, err_code 0[0m
+[0;32mI (1598) EXAMPLE: BLE Mesh Node initialized[0m
+[0;32mI (1598) main_task: Returned from app_main()[0m
+[0;32mI (1668) EXAMPLE: ESP_BLE_MESH_NODE_PROV_LINK_OPEN_EVT, bearer PB-ADV[0m
+[0;32mI (3688) EXAMPLE: ESP_BLE_MESH_NODE_PROV_COMPLETE_EVT[0m
+[0;32mI (3688) EXAMPLE: net_idx 0x000, addr 0x0005[0m
+[0;32mI (3688) EXAMPLE: flags 0x00, iv_index 0x00000000[0m
+[0;32mI (3688) EXAMPLE: === MY UNICAST ADDR: 0x0005 ===[0m
+[0;32mI (3968) EXAMPLE: ESP_BLE_MESH_NODE_PROV_LINK_CLOSE_EVT, bearer PB-ADV[0m
+[0;32mI (4638) EXAMPLE: ESP_BLE_MESH_MODEL_OP_APP_KEY_ADD[0m
+[0;32mI (4638) EXAMPLE: net_idx 0x0000, app_idx 0x0000[0m
+[0;32mI (4638) AppKey: 12 12 12 12 12 12 12 12 12 12 12 12 12 12 12 12[0m
+[0;32mI (4848) EXAMPLE: ESP_BLE_MESH_MODEL_OP_MODEL_APP_BIND[0m
+[0;32mI (4848) EXAMPLE: elem_addr 0x0005, app_idx 0x0000, cid 0x02e5, mod_id 0x0001[0m
+[0;32mI (20118) EXAMPLE: Recv 0xc002e5 from 0x0001 | TID=0x0016 | price=99000 | sale=30% | barcode=0000012345678[0m
+[0;32mI (20118) RENDER: start: title=THIT GA sale=30% orig=99.000 final=69.300 ean=0000012345678[0m
+[0;32mI (20118) EXAMPLE: ACKed TID 0x0016[0m
+[0;32mI (20128) EXAMPLE: Send 0xc102e5[0m
+[0;32mI (20348) RENDER: done[0m
+[0;32mI (32858) EXAMPLE: Recv 0xc002e5 from 0x0001 | TID=0x0017 | price=99000 | sale=30% | barcode=0000012345678[0m
+[0;32mI (32858) RENDER: start: title=THIT GA sale=30% orig=99.000 final=69.300 ean=0000012345678[0m
+[0;32mI (32858) EXAMPLE: ACKed TID 0x0017[0m
+[0;32mI (32868) EXAMPLE: Send 0xc102e5[0m
+[0;32mI (33088) RENDER: done[0m

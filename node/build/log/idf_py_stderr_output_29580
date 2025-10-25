@@ -1,0 +1,10 @@
+CMake Error at D:/esp/Espressif/frameworks/esp-idf-v5.4.2/tools/cmake/build.cmake:328 (message):
+  Failed to resolve component 'arduino-esp32' required by component
+  'adafruit_busio': unknown name.
+Call Stack (most recent call first):
+  D:/esp/Espressif/frameworks/esp-idf-v5.4.2/tools/cmake/build.cmake:371 (__build_resolve_and_add_req)
+  D:/esp/Espressif/frameworks/esp-idf-v5.4.2/tools/cmake/build.cmake:675 (__build_expand_requirements)
+  D:/esp/Espressif/frameworks/esp-idf-v5.4.2/tools/cmake/project.cmake:718 (idf_build_process)
+  CMakeLists.txt:6 (project)
+
+

@@ -6,12 +6,12 @@
  *
  * SPDX-License-Identifier: Apache-2.0
  */
-
+// {"add":0x0005,"price":99000,"barcode":"12345678","sale":20} 
 #include <stdio.h>
 #include <string.h>
 #include <inttypes.h>
 #include <stdbool.h>
-#include <ctype.h>   ////
+#include <ctype.h>
 #include "esp_log.h"
 #include "nvs_flash.h"
 #include "esp_bt.h"
@@ -29,11 +29,11 @@
 #include "wifi_sta.h"
 
 #include "mesh_vendor_api.h"
-///////////
+
 #ifndef PRICE_BARCODE_MAXLEN
 #define PRICE_BARCODE_MAXLEN 31
 #endif
-//////////////////////////////
+
 #define TAG "EXAMPLE"
 
 #define CID_ESP             0x02E5
@@ -55,19 +55,20 @@
 #define ESP_BLE_MESH_VND_MODEL_ID_CLIENT    0x0000
 #define ESP_BLE_MESH_VND_MODEL_ID_SERVER    0x0001
 
-#define ESP_BLE_MESH_VND_MODEL_OP_SEND      ESP_BLE_MESH_MODEL_OP_3(0x00, CID_ESP) /////////////
+#define ESP_BLE_MESH_VND_MODEL_OP_SEND      ESP_BLE_MESH_MODEL_OP_3(0x00, CID_ESP)
 #define ESP_BLE_MESH_VND_MODEL_OP_STATUS    ESP_BLE_MESH_MODEL_OP_3(0x01, CID_ESP)
 
 static uint8_t dev_uuid[ESP_BLE_MESH_OCTET16_LEN];
 
+/* ===== (GIỮ LẠI) Lưu lần node cuối cùng + TID ===== */
 static struct example_info_store {
-    uint16_t server_addr;   /* Vendor server unicast address */
-    uint16_t vnd_tid;       /* TID contained in the vendor message */
+    uint16_t server_addr;   /* Vendor server unicast address (node cuối cùng) */
+    uint16_t vnd_tid;       /* TID chứa trong vendor message */
 } store = {
-    .server_addr = ESP_BLE_MESH_ADDR_UNASSIGNED,   //Nếu muốn điều khiển nhiều node, đổi sang mảng/bảng (server_addr_i, vnd_tid_i) cho từng node
+    .server_addr = ESP_BLE_MESH_ADDR_UNASSIGNED,
     .vnd_tid = 0,
 };
-//
+
 static nvs_handle_t NVS_HANDLE;
 static const char * NVS_KEY = "vendor_client";
 
@@ -94,7 +95,7 @@ static esp_ble_mesh_cfg_srv_t config_server = {
 static esp_ble_mesh_client_t config_client;
 
 static const esp_ble_mesh_client_op_pair_t vnd_op_pair[] = {
-    { ESP_BLE_MESH_VND_MODEL_OP_SEND, ESP_BLE_MESH_VND_MODEL_OP_STATUS },  ////////////////////
+    { ESP_BLE_MESH_VND_MODEL_OP_SEND, ESP_BLE_MESH_VND_MODEL_OP_STATUS },
 };
 
 static esp_ble_mesh_client_t vendor_client = {
@@ -130,14 +131,14 @@ static esp_ble_mesh_comp_t composition = {
 static esp_ble_mesh_prov_t provision = {
     .prov_uuid          = dev_uuid,
     .prov_unicast_addr  = PROV_OWN_ADDR,
-    .prov_start_address = 0x0005,
+    .prov_start_address = 0x0005,  /* node đầu tiên sẽ là 0x0005, sau đó tăng theo element_num */
 };
+
 
 static void mesh_example_info_store(void)
 {
     ble_mesh_nvs_store(NVS_HANDLE, NVS_KEY, &store, sizeof(store));
 }
-//
 static void mesh_example_info_restore(void)
 {
     esp_err_t err = ESP_OK;
@@ -147,7 +148,6 @@ static void mesh_example_info_restore(void)
     if (err != ESP_OK) {
         return;
     }
-
     if (exist) {
         ESP_LOGI(TAG, "Restore, server_addr 0x%04x, vnd_tid 0x%04x", store.server_addr, store.vnd_tid);
     }
@@ -169,6 +169,7 @@ static void example_ble_mesh_set_msg_common(esp_ble_mesh_client_common_param_t *
 #endif
 }
 
+/* ===== Hoàn tất provision 1 node ===== */
 static esp_err_t prov_complete(uint16_t node_index, const esp_ble_mesh_octet16_t uuid,
                                uint16_t primary_addr, uint8_t element_num, uint16_t net_idx)
 {
@@ -182,8 +183,9 @@ static esp_err_t prov_complete(uint16_t node_index, const esp_ble_mesh_octet16_t
         node_index, primary_addr, element_num, net_idx);
     ESP_LOG_BUFFER_HEX("uuid", uuid, ESP_BLE_MESH_OCTET16_LEN);
 
+    /* Lưu node cuối cùng (fallback) */
     store.server_addr = primary_addr;
-    mesh_example_info_store(); /* Store proper mesh example info */
+    mesh_example_info_store();
 
     sprintf(name, "%s%02x", "NODE-", node_index);
     err = esp_ble_mesh_provisioner_set_node_name(node_index, name);
@@ -198,6 +200,7 @@ static esp_err_t prov_complete(uint16_t node_index, const esp_ble_mesh_octet16_t
         return ESP_FAIL;
     }
 
+    /* Lấy Composition → AppKey Add → Model App Bind (giữ nguyên chuỗi cấu hình) */
     example_ble_mesh_set_msg_common(&common, node, config_client.model, ESP_BLE_MESH_MODEL_OP_COMPOSITION_DATA_GET);
     get.comp_data_get.page = COMP_DATA_PAGE_0;
     err = esp_ble_mesh_config_client_get_state(&common, &get);
@@ -209,17 +212,18 @@ static esp_err_t prov_complete(uint16_t node_index, const esp_ble_mesh_octet16_t
     return ESP_OK;
 }
 
+/* ===== Double-check UUID helper (khớp với prefix lọc) ===== */
+static inline bool uuid_ok(const uint8_t uuid[16]) {
+    return uuid[0] == 0x32 && uuid[1] == 0x10;
+}
+
+/* ===== Add unprov device khi quét thấy ===== */
 static void recv_unprov_adv_pkt(uint8_t dev_uuid[ESP_BLE_MESH_OCTET16_LEN], uint8_t addr[BD_ADDR_LEN],
                                 esp_ble_mesh_addr_type_t addr_type, uint16_t oob_info,
                                 uint8_t adv_type, esp_ble_mesh_prov_bearer_t bearer)
 {
     esp_ble_mesh_unprov_dev_add_t add_dev = {0};
     esp_err_t err;
-
-    /* Due to the API esp_ble_mesh_provisioner_set_dev_uuid_match, Provisioner will only
-     * use this callback to report the devices, whose device UUID starts with 0xdd & 0xdd,
-     * to the application layer.
-     */
 
     ESP_LOG_BUFFER_HEX("Device address", addr, BD_ADDR_LEN);
     ESP_LOGI(TAG, "Address type 0x%02x, adv type 0x%02x", addr_type, adv_type);
@@ -231,8 +235,8 @@ static void recv_unprov_adv_pkt(uint8_t dev_uuid[ESP_BLE_MESH_OCTET16_LEN], uint
     memcpy(add_dev.uuid, dev_uuid, ESP_BLE_MESH_OCTET16_LEN);
     add_dev.oob_info = oob_info;
     add_dev.bearer = (esp_ble_mesh_prov_bearer_t)bearer;
-    /* Note: If unprovisioned device adv packets have not been received, we should not add
-             device with ADD_DEV_START_PROV_NOW_FLAG set. */
+
+    /* Tự động add & start provision ngay (như cũ) */
     err = esp_ble_mesh_provisioner_add_unprov_dev(&add_dev,
             ADD_DEV_RM_AFTER_PROV_FLAG | ADD_DEV_START_PROV_NOW_FLAG | ADD_DEV_FLUSHABLE_DEV_FLAG);
     if (err != ESP_OK) {
@@ -240,13 +244,14 @@ static void recv_unprov_adv_pkt(uint8_t dev_uuid[ESP_BLE_MESH_OCTET16_LEN], uint
     }
 }
 
+/* ===== Provisioning callbacks ===== */
 static void example_ble_mesh_provisioning_cb(esp_ble_mesh_prov_cb_event_t event,
                                              esp_ble_mesh_prov_cb_param_t *param)
 {
     switch (event) {
     case ESP_BLE_MESH_PROV_REGISTER_COMP_EVT:
         ESP_LOGI(TAG, "ESP_BLE_MESH_PROV_REGISTER_COMP_EVT, err_code %d", param->prov_register_comp.err_code);
-        mesh_example_info_restore(); /* Restore proper mesh example info */
+        mesh_example_info_restore(); /* Restore info node cuối */
         break;
     case ESP_BLE_MESH_PROVISIONER_PROV_ENABLE_COMP_EVT:
         ESP_LOGI(TAG, "ESP_BLE_MESH_PROVISIONER_PROV_ENABLE_COMP_EVT, err_code %d", param->provisioner_prov_enable_comp.err_code);
@@ -255,7 +260,11 @@ static void example_ble_mesh_provisioning_cb(esp_ble_mesh_prov_cb_event_t event,
         ESP_LOGI(TAG, "ESP_BLE_MESH_PROVISIONER_PROV_DISABLE_COMP_EVT, err_code %d", param->provisioner_prov_disable_comp.err_code);
         break;
     case ESP_BLE_MESH_PROVISIONER_RECV_UNPROV_ADV_PKT_EVT:
-        ESP_LOGI(TAG, "ESP_BLE_MESH_PROVISIONER_RECV_UNPROV_ADV_PKT_EVT");
+        /* Double-check UUID (phòng khi môi trường lẫn thiết bị lạ) */
+        if (!uuid_ok(param->provisioner_recv_unprov_adv_pkt.dev_uuid)) {
+            ESP_LOGW(TAG, "Skip foreign UUID");
+            break;
+        }
         recv_unprov_adv_pkt(param->provisioner_recv_unprov_adv_pkt.dev_uuid, param->provisioner_recv_unprov_adv_pkt.addr,
                             param->provisioner_recv_unprov_adv_pkt.addr_type, param->provisioner_recv_unprov_adv_pkt.oob_info,
                             param->provisioner_recv_unprov_adv_pkt.adv_type, param->provisioner_recv_unprov_adv_pkt.bearer);
@@ -292,10 +301,12 @@ static void example_ble_mesh_provisioning_cb(esp_ble_mesh_prov_cb_event_t event,
         ESP_LOGI(TAG, "ESP_BLE_MESH_PROVISIONER_ADD_LOCAL_APP_KEY_COMP_EVT, err_code %d", param->provisioner_add_app_key_comp.err_code);
         if (param->provisioner_add_app_key_comp.err_code == 0) {
             prov_key.app_idx = param->provisioner_add_app_key_comp.app_idx;
-            esp_err_t err = esp_ble_mesh_provisioner_bind_app_key_to_local_model(PROV_OWN_ADDR, prov_key.app_idx,
-                    ESP_BLE_MESH_VND_MODEL_ID_CLIENT, CID_ESP);
-            if (err != ESP_OK) {
-                ESP_LOGE(TAG, "Failed to bind AppKey to vendor client");
+            {
+                esp_err_t err = esp_ble_mesh_provisioner_bind_app_key_to_local_model(PROV_OWN_ADDR, prov_key.app_idx,
+                        ESP_BLE_MESH_VND_MODEL_ID_CLIENT, CID_ESP);
+                if (err != ESP_OK) {
+                    ESP_LOGE(TAG, "Failed to bind AppKey to vendor client");
+                }
             }
         }
         break;
@@ -310,6 +321,7 @@ static void example_ble_mesh_provisioning_cb(esp_ble_mesh_prov_cb_event_t event,
     }
 }
 
+/* ===== Parse Composition Data (giữ nguyên) ===== */
 static void example_ble_mesh_parse_node_comp_data(const uint8_t *data, uint16_t length)
 {
     uint16_t cid, pid, vid, crpl, feat;
@@ -348,6 +360,7 @@ static void example_ble_mesh_parse_node_comp_data(const uint8_t *data, uint16_t 
     ESP_LOGI(TAG, "*********************** Composition Data End ***********************");
 }
 
+/* ===== Config Client callbacks (giữ nguyên logic AppKey Add → Model App Bind) ===== */
 static void example_ble_mesh_config_client_cb(esp_ble_mesh_cfg_client_cb_event_t event,
                                               esp_ble_mesh_cfg_client_cb_param_t *param)
 {
@@ -459,12 +472,9 @@ static void example_ble_mesh_config_client_cb(esp_ble_mesh_cfg_client_cb_event_t
     }
 }
 
+
 esp_err_t example_ble_mesh_send_vendor_message(bool resend)
 {
-    if (!ESP_BLE_MESH_ADDR_IS_UNICAST(store.server_addr)) {
-        ESP_LOGE(TAG, "Invalid dst 0x%04X", store.server_addr);
-        return ESP_FAIL;
-    }
     if (vendor_client.model == NULL) {
         ESP_LOGE(TAG, "vendor_client.model is NULL");
         return ESP_FAIL;
@@ -475,22 +485,31 @@ esp_err_t example_ble_mesh_send_vendor_message(bool resend)
 
     /* ===== LẤY DỮ LIỆU TỪ MQTT ===== */
     static uint32_t s_price_cache = 0;
-    static char     s_barcode_cache[64] = "";   // đủ dài cho barcode ASCII
+    static char     s_barcode_cache[64] = "";
+    static uint8_t  s_sale_cache = 0xFF; // 0..100, 0xFF = không có
+    static uint16_t s_dst_cache  = 0x0000; // nhớ địa chỉ lần trước (nếu cần)
 
-    CmdMsg msg = {0};
+    CmdMsg msg = (CmdMsg){0};
     if (mqtt_try_get_last(&msg)) {
+        // giá
         s_price_cache = (msg.price < 0) ? 0u : (uint32_t)msg.price;
-        // copy an toàn, đảm bảo null-terminate
+        // barcode
         size_t n = strnlen(msg.barcode, sizeof(msg.barcode));
         if (n >= sizeof(s_barcode_cache)) n = sizeof(s_barcode_cache) - 1;
         memcpy(s_barcode_cache, msg.barcode, n);
         s_barcode_cache[n] = '\0';
+        // sale
+        if (msg.has_sale && msg.sale <= 100) s_sale_cache = msg.sale;
+        else s_sale_cache = 0xFF;
+        // địa chỉ đích từ add (JSON)
+        s_dst_cache = msg.add; // "add" = unicast đích
     } else {
-        ESP_LOGW(TAG, "No new MQTT data, reuse cached price/barcode");
+        ESP_LOGW(TAG, "No new MQTT data, reuse cached values");
     }
 
-    uint32_t price = s_price_cache;
+    uint32_t    price      = s_price_cache;
     const char *barcode_in = s_barcode_cache;
+    uint8_t     sale_pct   = s_sale_cache;
 
     /* ===== CHUẨN HOÁ BARCODE → 13 KÝ TỰ SỐ, PACK BCD ===== */
     char digits_only[64] = {0};
@@ -498,16 +517,13 @@ esp_err_t example_ble_mesh_send_vendor_message(bool resend)
     for (const char *p = barcode_in; *p && m < sizeof(digits_only)-1; ++p) {
         if (isdigit((unsigned char)*p)) digits_only[m++] = *p;
     }
-
     char e13[13];
-    if (m >= 13) {
-        memcpy(e13, digits_only + (m - 13), 13);
-    } else {
+    if (m >= 13) memcpy(e13, digits_only + (m - 13), 13);
+    else {
         size_t pad = 13 - m;
         memset(e13, '0', pad);
         memcpy(e13 + pad, digits_only, m);
     }
-
     uint8_t bcd[7];
     for (int i = 0; i < 6; ++i) {
         uint8_t hi = (uint8_t)(e13[2*i]   - '0');
@@ -516,8 +532,17 @@ esp_err_t example_ble_mesh_send_vendor_message(bool resend)
     }
     bcd[6] = (uint8_t)(((uint8_t)(e13[12] - '0') << 4) | 0x0F);
 
-    /* ===== BUILD PAYLOAD 13B: TID(2) + PRICE(4 LE) + BCD(7) ===== */
-    uint8_t buf[13];
+    /* ===== CHỌN ĐỊA CHỈ ĐÍCH TỪ add (JSON) ===== */
+    uint16_t dst_addr = s_dst_cache ? s_dst_cache : store.server_addr;
+
+    /* === CHECK QUAN TRỌNG: phải là UNICAST hợp lệ === */
+    if (!ESP_BLE_MESH_ADDR_IS_UNICAST(dst_addr)) {
+        ESP_LOGW(TAG, "dst_addr invalid (no 'add' or bad value). Skip send.");
+        return ESP_FAIL;
+    }
+
+    /* ===== BUILD PAYLOAD 14B: TID(2) + PRICE(4) + BCD(7) + SALE(1) ===== */
+    uint8_t buf[14];
     buf[0] = (uint8_t)(tid & 0xFF);
     buf[1] = (uint8_t)((tid >> 8) & 0xFF);
     buf[2] = (uint8_t)(price & 0xFF);
@@ -525,18 +550,24 @@ esp_err_t example_ble_mesh_send_vendor_message(bool resend)
     buf[4] = (uint8_t)((price >> 16) & 0xFF);
     buf[5] = (uint8_t)((price >> 24) & 0xFF);
     memcpy(&buf[6], bcd, 7);
+    buf[13] = sale_pct;
 
     /* ===== GỬI ===== */
-    esp_ble_mesh_msg_ctx_t ctx = {0};
+    esp_ble_mesh_msg_ctx_t ctx = (esp_ble_mesh_msg_ctx_t){0};
     ctx.net_idx  = prov_key.net_idx;
     ctx.app_idx  = prov_key.app_idx;
-    ctx.addr     = store.server_addr;   // ví dụ 0x0005
+    ctx.addr     = dst_addr;     // unicast đích từ JSON.add
     ctx.send_ttl = MSG_SEND_TTL;
 
     const uint32_t opcode = ESP_BLE_MESH_VND_MODEL_OP_SEND;
 
-    ESP_LOGI(TAG, "SEND → dst=0x%04X, TID=0x%04X, price=%u, barcode13=%.*s",
-             store.server_addr, tid, (unsigned)price, 13, e13);
+    if (sale_pct != 0xFF) {
+        ESP_LOGI(TAG, "SEND → dst=0x%04X, TID=0x%04X, price=%u, sale=%u%%, barcode13=%.*s",
+                 dst_addr, tid, (unsigned)price, (unsigned)sale_pct, 13, e13);
+    } else {
+        ESP_LOGI(TAG, "SEND → dst=0x%04X, TID=0x%04X, price=%u, sale=NA, barcode13=%.*s",
+                 dst_addr, tid, (unsigned)price, 13, e13);
+    }
 
     esp_err_t err = esp_ble_mesh_client_model_send_msg(
         vendor_client.model, &ctx, opcode,
@@ -551,15 +582,14 @@ esp_err_t example_ble_mesh_send_vendor_message(bool resend)
     return ESP_OK;
 }
 
-
-
+/* ===== Model callbacks (giữ nguyên) ===== */
 static void example_ble_mesh_custom_model_cb(esp_ble_mesh_model_cb_event_t event,
                                              esp_ble_mesh_model_cb_param_t *param)
 {
     static int64_t start_time;
 
     switch (event) {
-    case ESP_BLE_MESH_MODEL_OPERATION_EVT:  //nhận phải hồi từ node
+    case ESP_BLE_MESH_MODEL_OPERATION_EVT:  // nhận phản hồi từ node
         if (param->model_operation.opcode == ESP_BLE_MESH_VND_MODEL_OP_STATUS) {
             int64_t end_time = esp_timer_get_time();
             ESP_LOGI(TAG, "Recv 0x06%" PRIx32 ", tid 0x%04x, time %lldus",
@@ -579,15 +609,16 @@ static void example_ble_mesh_custom_model_cb(esp_ble_mesh_model_cb_event_t event
         break;
     case ESP_BLE_MESH_CLIENT_MODEL_SEND_TIMEOUT_EVT:
         ESP_LOGW(TAG, "Client message 0x%06" PRIx32 " timeout", param->client_send_timeout.opcode);
-        //example_ble_mesh_send_vendor_message(true);
         break;
     default:
         break;
     }
 }
 
+/* ===== BLE Mesh init (GIỮ LỌC UUID PREFIX) ===== */
 static esp_err_t ble_mesh_init(void)
 {
+    /* Giữ lọc: chỉ thấy các node có UUID bắt đầu bằng 0x32 0x10 */
     uint8_t match[2] = { 0x32, 0x10 };
     esp_err_t err;
 
@@ -611,6 +642,7 @@ static esp_err_t ble_mesh_init(void)
         return err;
     }
 
+    /* Lọc UUID prefix như yêu cầu */
     err = esp_ble_mesh_provisioner_set_dev_uuid_match(match, sizeof(match), 0x0, false);
     if (err != ESP_OK) {
         ESP_LOGE(TAG, "Failed to set matching device uuid");
@@ -629,11 +661,11 @@ static esp_err_t ble_mesh_init(void)
         return err;
     }
 
-    ESP_LOGI(TAG, "ESP BLE Mesh Provisioner initialized");
-
+    ESP_LOGI(TAG, "ESP BLE Mesh Provisioner initialized (UUID filter on)");
     return ESP_OK;
 }
 
+/* ===== app_main (giữ nguyên + wifi) ===== */
 void app_main(void)
 {
     esp_err_t err;
@@ -652,7 +684,9 @@ void app_main(void)
         ESP_LOGE(TAG, "esp32_bluetooth_init failed (err %d)", err);
         return;
     }
-    wifi_init_sta(); 
+
+    wifi_init_sta();
+
     /* Open nvs namespace for storing/restoring mesh example info */
     err = ble_mesh_nvs_open(&NVS_HANDLE);
     if (err) {
